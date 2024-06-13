@@ -1,0 +1,11 @@
+[package]
+name = "serverless_wasm"
+version = "0.1.0"
+authors = ["Your Name <you@example.com>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+

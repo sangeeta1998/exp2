@@ -1,0 +1,12 @@
+[package]
+name = "serverless_rust"
+version = "0.1.0"
+authors = ["Your Name <you@example.com>"]
+edition = "2018"
+
+[[bin]]
+name = "serverless_rust"
+path = "src/main.rs"
+
+[dependencies]
+

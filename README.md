@@ -1,4 +1,4 @@
-# Run:
+
 ``` /.measure_cold_start.sh ```
 
 Example output: 

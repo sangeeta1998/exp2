@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Function to measure cold start time for Rust serverless application
 
 measure_rust() {
     # Measure cold start time from pull
@@ -16,7 +15,7 @@ measure_rust() {
     echo "Rust cold start time from cache: $(($end_time - $start_time)) ms"
 }
 
-# Function to measure cold start time for Wasm module (assuming you have already implemented this)
+
 measure_wasm() {
     start_time=$(date +%s%3N)
     wasm_file="serverless_wasm/target/wasm32-wasi/release/serverless_wasm.wasm"
@@ -29,6 +28,6 @@ measure_wasm() {
     echo "Wasm cold start time: $(($end_time - $start_time)) ms"
 }
 
-# Measure cold start times
+# Measure time
 measure_rust
 measure_wasm

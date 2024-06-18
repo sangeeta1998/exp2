@@ -1,12 +1,7 @@
 
-``` /.measure_cold_start.sh ```
+``` /.measure.sh ```
 
-Example output: 
-```Time elapsed in expensive_function() is: 49ns
-Handler result: 499500
-Rust cold start time: 691 ms
-Wasm cold start time: 8 ms
-```
+
 Comparison of Implementations:
 # Functionality:
 

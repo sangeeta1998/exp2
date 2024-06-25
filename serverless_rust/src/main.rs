@@ -10,7 +10,8 @@ pub extern "C" fn handler() -> i32 {
     let start = Instant::now();
     let result = (0..1000).fold(0, |acc, x| acc + x);
     let duration = start.elapsed();
-    println!("Time elapsed in function() is: {:?}", duration);
+    let millis = duration.as_millis();
+    println!("Time elapsed in function() is: {} ms", millis);
     result
 }
 

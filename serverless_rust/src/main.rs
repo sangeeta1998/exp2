@@ -1,3 +1,4 @@
+
 use std::time::Instant;
 
 fn main() {
@@ -5,8 +6,7 @@ fn main() {
     println!("Handler result: {}", result);
 }
 
-#[no_mangle]
-pub extern "C" fn handler() -> i32 {
+fn handler() -> i32 {
     let start = Instant::now();
     let result = (0..1000).fold(0, |acc, x| acc + x);
     let duration = start.elapsed();

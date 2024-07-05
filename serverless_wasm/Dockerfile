@@ -1,5 +1,3 @@
 FROM scratch
-COPY wasmtime /usr/local/bin/wasmtime
-COPY serverless_wasm.wasm /serverless_wasm.wasm
-ENTRYPOINT ["/usr/local/bin/wasmtime", "/serverless_wasm.wasm"]
-
+COPY target/wasm32-wasi/release/serverless_wasm.wasm /serverless_wasm.wasm
+ENTRYPOINT ["/serverless_wasm.wasm"]

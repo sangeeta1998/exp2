@@ -4,8 +4,10 @@ version = "0.1.0"
 authors = ["Your Name <you@example.com>"]
 edition = "2018"
 
-[lib]
-crate-type = ["cdylib"]
-
 [dependencies]
+rand = "0.8.4"
+
+[[bin]]
+name = "serverless_wasm"
+path = "src/main.rs"
 

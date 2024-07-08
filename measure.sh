@@ -1,50 +1,45 @@
 #!/bin/bash
 
-measure_rust() {
-    trials=5
-    total_pull_time=0
-    total_cache_time=0
+# Build the native container
+echo "Building native container..."
+docker build -t sangeetakakati/rust-matrix-native:latest ./serverless_rust
 
-    for i in $(seq 1 $trials); do
-        # Measure cold start time from pull
-        docker rmi sangeetakakati/rust-serverless:latest > /dev/null 2>&1
-        start_time=$(date +%s%3N)
-        docker run --rm sangeetakakati/rust-serverless > /dev/null 2>&1
-        end_time=$(date +%s%3N)
-        total_pull_time=$((total_pull_time + end_time - start_time))
+# Build the Wasm container
+echo "Building Wasm container..."
+docker buildx build --platform wasi/wasm -t sangeetakakati/rust-matrix-wasm:latest ./serverless_wasm
 
-        # Measure cold start time from cache
-        start_time=$(date +%s%3N)
-        docker run --rm sangeetakakati/rust-serverless > /dev/null 2>&1
-        end_time=$(date +%s%3N)
-        total_cache_time=$((total_cache_time + end_time - start_time))
-    done
+# Pull the images (ensure latest is used)
+echo "Pulling the native container image..."
+docker pull sangeetakakati/rust-matrix-native:latest
 
-    echo "Average Rust cold start time from pull: $((total_pull_time / trials)) ms"
-    echo "Average Rust cold start time from cache: $((total_cache_time / trials)) ms"
-}
+echo "Pulling the Wasm container image..."
+docker pull sangeetakakati/rust-matrix-wasm:latest
 
-measure_wasm() {
-    trials=5
-    total_wasm_time=0
-    wasm_file="serverless_wasm/target/wasm32-wasi/release/serverless_wasm.wasm"
+# Get the image sizes
+native_size=$(docker images sangeetakakati/rust-matrix-native:latest --format "{{.Size}}")
+wasm_size=$(docker images sangeetakakati/rust-matrix-wasm:latest --format "{{.Size}}")
 
-    for i in $(seq 1 $trials); do
-        start_time=$(date +%s%3N)
-        if [ -f "$wasm_file" ]; then
-            /home/kakati/.wasmtime/bin/wasmtime "$wasm_file" > /dev/null 2>&1
-        else
-            echo "Error: Wasm module not found at $wasm_file"
-            return 1
-        fi
-        end_time=$(date +%s%3N)
-        total_wasm_time=$((total_wasm_time + end_time - start_time))
-    done
+# Measure native container startup time and execution time
+echo "Measuring native container performance..."
+start_time=$(date +%s%3N)
+docker run --rm sangeetakakati/rust-matrix-native:latest > native_output.txt
+end_time=$(date +%s%3N)
+startup_time_native=$((end_time - start_time))
+execution_time_native=$(grep "Time taken:" native_output.txt | awk '{print $3}')
 
-    echo "Average Wasm cold start time: $((total_wasm_time / trials)) ms"
-}
+# Measure Wasm container startup time and execution time using wasmtime
+echo "Measuring Wasm container performance..."
+start_time=$(date +%s%3N)
+docker run --rm --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm sangeetakakati/rust-matrix-wasm:latest > wasm_output.txt
+end_time=$(date +%s%3N)
+startup_time_wasm=$((end_time - start_time))
+execution_time_wasm=$(grep "Time taken:" wasm_output.txt | awk '{print $3}')
 
-# Measure time
-measure_rust
-measure_wasm
+# Output the results
+echo "Native container size: ${native_size}"
+echo "Wasm container size: ${wasm_size}"
+echo "Native container startup time: ${startup_time_native} ms"
+echo "Wasm container startup time: ${startup_time_wasm} ms"
+echo "Native container execution time: ${execution_time_native}"
+echo "Wasm container execution time: ${execution_time_wasm}"
 

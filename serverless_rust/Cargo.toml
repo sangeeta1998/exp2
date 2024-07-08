@@ -9,4 +9,4 @@ name = "serverless_rust"
 path = "src/main.rs"
 
 [dependencies]
-
+rand = "0.8.4"

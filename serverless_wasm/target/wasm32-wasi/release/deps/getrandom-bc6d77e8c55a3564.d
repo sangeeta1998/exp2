@@ -1,0 +1,11 @@
+/home/kakati/exp2/serverless_wasm/target/wasm32-wasi/release/deps/libgetrandom-bc6d77e8c55a3564.rmeta: /home/kakati/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/lib.rs /home/kakati/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/error.rs /home/kakati/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/util.rs /home/kakati/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/error_impls.rs /home/kakati/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/wasi.rs
+
+/home/kakati/exp2/serverless_wasm/target/wasm32-wasi/release/deps/libgetrandom-bc6d77e8c55a3564.rlib: /home/kakati/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/lib.rs /home/kakati/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/error.rs /home/kakati/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/util.rs /home/kakati/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/error_impls.rs /home/kakati/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/wasi.rs
+
+/home/kakati/exp2/serverless_wasm/target/wasm32-wasi/release/deps/getrandom-bc6d77e8c55a3564.d: /home/kakati/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/lib.rs /home/kakati/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/error.rs /home/kakati/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/util.rs /home/kakati/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/error_impls.rs /home/kakati/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/wasi.rs
+
+/home/kakati/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/lib.rs:
+/home/kakati/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/error.rs:
+/home/kakati/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/util.rs:
+/home/kakati/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/error_impls.rs:
+/home/kakati/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.15/src/wasi.rs:

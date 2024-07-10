@@ -1,2 +1,0 @@
-Sum of all elements: 31194491.870443854
-Time taken: 757.65556ms

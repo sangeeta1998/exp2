@@ -1,6 +1,6 @@
-# Performs matrix multiplication on two randomly generated 500x500 matrices
+ Performs matrix multiplication on two randomly generated 500x500 matrices
 
-# Measurement script:
+Measurement script:
 
 Trials=5
 

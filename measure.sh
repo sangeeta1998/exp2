@@ -5,24 +5,30 @@ measure_rust() {
     total_pull_time=0
     total_cache_time=0
 
-    for i in $(seq 1 $trials); do
-        docker rmi sangeetakakati/rust-matrix-native:latest > /dev/null 2>&1  #cold start time from pull
-        start_time=$(date +%s%3N)
-        docker run --rm sangeetakakati/rust-matrix-native:latest > /dev/null 2>&1
-        end_time=$(date +%s%3N)
-        pull_time=$((end_time - start_time))
-        total_pull_time=$((total_pull_time + pull_time))
+    echo "Measuring Rust..."
 
-        # Ensuring
+    for i in $(seq 1 $trials); do
+        # Cold start time from pull
+        docker rmi sangeetakakati/rust-matrix-native:latest > /dev/null 2>&1
+        script_start_time=$(date +%s%3N)
+        echo "Script start time: ${script_start_time} ms"
+        main_start_time=$(docker run --rm sangeetakakati/rust-matrix-native:latest 2>&1 | grep "Main function started at:" | awk '{print $5}')
+        pull_time=$((main_start_time - script_start_time))
+        total_pull_time=$((total_pull_time + pull_time))
+        echo "Rust Trial $i (Pull): Startup Time = $pull_time ms"
+    done
+
+    for i in $(seq 1 $trials); do
+        # Ensuring the image is pulled
         docker pull sangeetakakati/rust-matrix-native:latest > /dev/null 2>&1
 
-        start_time=$(date +%s%3N)  # Measure cold start time from cache
-        docker run --rm sangeetakakati/rust-matrix-native:latest > /dev/null 2>&1
-        end_time=$(date +%s%3N)
-        cache_time=$((end_time - start_time))
+        # Cold start time from cache
+        script_start_time=$(date +%s%3N)
+        echo "Script start time: ${script_start_time} ms"
+        main_start_time=$(docker run --rm sangeetakakati/rust-matrix-native:latest 2>&1 | grep "Main function started at:" | awk '{print $5}')
+        cache_time=$((main_start_time - script_start_time))
         total_cache_time=$((total_cache_time + cache_time))
-
-        echo "Rust Trial $i: Pull time = $pull_time ms, Cache time = $cache_time ms"
+        echo "Rust Trial $i (Cache): Startup Time = $cache_time ms"
     done
 
     echo "Average Rust cold start time from pull: $((total_pull_time / trials)) ms"
@@ -34,26 +40,30 @@ measure_wasm() {
     total_pull_time=0
     total_cache_time=0
 
-    for i in $(seq 1 $trials); do
-        #cold start time from pull
-        docker rmi sangeetakakati/rust-matrix-wasm:latest > /dev/null 2>&1
-        start_time=$(date +%s%3N)
-        docker run --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm --rm sangeetakakati/rust-matrix-wasm:latest > /dev/null 2>&1
-        end_time=$(date +%s%3N)
-        pull_time=$((end_time - start_time))
-        total_pull_time=$((total_pull_time + pull_time))
+    echo "Measuring Wasm..."
 
-        #Ensuring
+    for i in $(seq 1 $trials); do
+        # Cold start time from pull
+        docker rmi sangeetakakati/rust-matrix-wasm:latest > /dev/null 2>&1
+        script_start_time=$(date +%s%3N)
+        echo "Script start time: ${script_start_time} ms"
+        main_start_time=$(docker run --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm --rm sangeetakakati/rust-matrix-wasm:latest 2>&1 | grep "Main function started at:" | awk '{print $5}')
+        pull_time=$((main_start_time - script_start_time))
+        total_pull_time=$((total_pull_time + pull_time))
+        echo "Wasm Trial $i (Pull): Startup Time = $pull_time ms"
+    done
+
+    for i in $(seq 1 $trials); do
+        # Ensuring the image is pulled
         docker pull sangeetakakati/rust-matrix-wasm:latest > /dev/null 2>&1
 
-        #cold start time from cache
-        start_time=$(date +%s%3N)
-        docker run --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm --rm sangeetakakati/rust-matrix-wasm:latest > /dev/null 2>&1
-        end_time=$(date +%s%3N)
-        cache_time=$((end_time - start_time))
+        # Cold start time from cache
+        script_start_time=$(date +%s%3N)
+        echo "Script start time: ${script_start_time} ms"
+        main_start_time=$(docker run --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm --rm sangeetakakati/rust-matrix-wasm:latest 2>&1 | grep "Main function started at:" | awk '{print $5}')
+        cache_time=$((main_start_time - script_start_time))
         total_cache_time=$((total_cache_time + cache_time))
-
-        echo "Wasm Trial $i: Pull time = $pull_time ms, Cache time = $cache_time ms"
+        echo "Wasm Trial $i (Cache): Startup Time = $cache_time ms"
     done
 
     echo "Average Wasm cold start time from pull: $((total_pull_time / trials)) ms"
@@ -62,3 +72,4 @@ measure_wasm() {
 
 measure_rust
 measure_wasm
+

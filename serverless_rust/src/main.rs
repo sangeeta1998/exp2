@@ -1,5 +1,13 @@
-use std::time::Instant;
+use std::time::{SystemTime, UNIX_EPOCH};
 use rand::random;
+
+// Function to get current time in milliseconds since UNIX_EPOCH
+fn current_time_millis() -> u128 {
+    SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .expect("Time went backwards")
+        .as_millis()
+}
 
 fn multiply_matrices(a: &Vec<Vec<f64>>, b: &Vec<Vec<f64>>) -> Vec<Vec<f64>> {
     let n = a.len();
@@ -18,6 +26,10 @@ fn multiply_matrices(a: &Vec<Vec<f64>>, b: &Vec<Vec<f64>>) -> Vec<Vec<f64>> {
 }
 
 fn main() {
+    // Print the start time of the main function
+    let start_time = current_time_millis();
+    println!("Main function started at: {} ms", start_time);
+
     // Define matrix dimensions
     let size = 500;
 
@@ -32,7 +44,7 @@ fn main() {
         }
     }
 
-    let start = Instant::now();
+    let start = std::time::Instant::now();
     let result = multiply_matrices(&a, &b);
     let duration = start.elapsed();
 

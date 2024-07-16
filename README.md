@@ -22,6 +22,15 @@ For multi architectures:
 
 ```docker buildx build --platform wasi/wasm,linux/amd64,linux/arm64  --output "type=image,push=true" --tag sangeetakakati/rust-matrix-wasm:arch --builder default .```
 
+# Optimising wasm
+
+```cargo install wasm-opt --locked```
+
+```wasm-opt -O3 -o target/wasm32-wasi/release/serverless_wasm_optimized.wasm target/wasm32-wasi/release/serverless_wasm.wasm```
+
+List the sizes now:
+
+```ls -lh serverless_wasm.wasm serverless_wasm_optimized.wasm```
 
 # Run the WASM image
 docker run --platform=wasi/wasm --runtime=io.containerd.wasmtime.v1 --rm sangeetakakati/rust-matrix-wasm:arch

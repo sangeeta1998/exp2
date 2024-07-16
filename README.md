@@ -41,5 +41,14 @@ docker run --platform=linux/amd64 --rm sangeetakakati/rust-matrix-wasm:arch
 # Run the Linux ARM64 image
 docker run --platform=linux/arm64 --rm sangeetakakati/rust-matrix-wasm:arch
 
+
+```docker buildx build \
+  --platform linux/amd64,linux/arm64,wasi/wasm \
+  --tag sangeetakakati/rust-matrix-wasm:amd64 \
+  --tag sangeetakakati/rust-matrix-wasm:arm64 \
+  --tag sangeetakakati/rust-matrix-wasm:wasm \
+  --push .```
+
+
 # Verify the manifest list
 docker manifest inspect sangeetakakati/rust-matrix-wasm:arch

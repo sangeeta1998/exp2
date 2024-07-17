@@ -41,7 +41,11 @@ docker run --platform=linux/amd64 --rm sangeetakakati/rust-matrix-wasm:arch
 # Run the Linux ARM64 image
 docker run --platform=linux/arm64 --rm sangeetakakati/rust-matrix-wasm:arch
 
-# Build for all archs
+# Build for all archs 
+
+[Reference](https://developers.redhat.com/articles/2023/11/03/how-build-multi-architecture-container-images#)
+
+docker buildx build --platform linux/amd64,linux/arm64 --output "type=image,push=true" --tag sangeetakakati/rust-matrix-native:latest --builder default .
 
 docker buildx build \
   --platform linux/amd64,linux/arm64,wasi/wasm \

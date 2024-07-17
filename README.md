@@ -16,11 +16,38 @@ kakati@UNI3R9TBK3:~/exp2/serverless_wasm$ ```docker buildx build --platform wasi
 
 ```docker run  --runtime=io.containerd.wasmtime.v1   --platform=wasi/wasm   sangeetakakati/rust-matrix-wasm```
 
-For multi architectures:
+# For multi architectures:
 
 ```docker buildx build --platform linux/amd64,linux/arm64 --output "type=image,push=true" --tag sangeetakakati/rust-matrix-native:arch --builder default .```
 
 ```docker buildx build --platform wasi/wasm,linux/amd64,linux/arm64  --output "type=image,push=true" --tag sangeetakakati/rust-matrix-wasm:arch --builder default .```
+
+# For separate tags:
+
+```rust-matrix-native```
+
+docker buildx build --platform linux/amd64 --tag sangeetakakati/rust-matrix-native:amd64 --output "type=image,push=true" --builder default .
+
+docker buildx build --platform linux/arm64 --tag sangeetakakati/rust-matrix-native:arm64 --output "type=image,push=true" --builder default .
+
+docker run --platform=linux/amd64 --rm sangeetakakati/rust-matrix-native:amd64
+
+docker run --platform=linux/arm64 --rm sangeetakakati/rust-matrix-native:arm64
+
+```rust-matrix-wasm```
+
+docker buildx build --platform linux/amd64 --tag sangeetakakati/rust-matrix-wasm:amd64 --output "type=image,push=true" --builder default .
+
+docker buildx build --platform linux/arm64 --tag sangeetakakati/rust-matrix-wasm:arm64 --output "type=image,push=true" --builder default .
+
+docker buildx build --platform wasi/wasm --tag sangeetakakati/rust-matrix-wasm:wasm --output "type=image,push=true" --builder default .
+
+docker run --platform=linux/amd64 --rm sangeetakakati/rust-matrix-wasm:amd64
+
+docker run --platform=linux/arm64 --rm sangeetakakati/rust-matrix-wasm:arm64
+
+docker run --platform=wasi/wasm --rm sangeetakakati/rust-matrix-wasm:wasm
+
 
 # Optimising wasm
 

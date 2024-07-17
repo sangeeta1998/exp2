@@ -47,7 +47,7 @@ docker run --platform=linux/arm64 --rm sangeetakakati/rust-matrix-wasm:arch
   --tag sangeetakakati/rust-matrix-wasm:amd64 \
   --tag sangeetakakati/rust-matrix-wasm:arm64 \
   --tag sangeetakakati/rust-matrix-wasm:wasm \
-  --push .```
+  --push .
 
 
 # Verify the manifest list

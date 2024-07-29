@@ -46,7 +46,7 @@ docker run --platform=linux/amd64 --rm sangeetakakati/rust-matrix-wasm:amd64
 
 docker run --platform=linux/arm64 --rm sangeetakakati/rust-matrix-wasm:arm64
 
-docker run --platform=wasi/wasm --rm sangeetakakati/rust-matrix-wasm:wasm
+docker run  --runtime=io.containerd.wasmtime.v1   --platform=wasi/wasm   sangeetakakati/rust-matrix-wasm:wasm
 
 
 # Optimising wasm

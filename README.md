@@ -42,11 +42,11 @@ docker buildx build --platform linux/arm64 --tag sangeetakakati/rust-matrix-wasm
 
 docker buildx build --platform wasi/wasm --tag sangeetakakati/rust-matrix-wasm:wasm --output "type=image,push=true" --builder default .
 
-docker run --platform=linux/amd64 --rm sangeetakakati/rust-matrix-wasm:amd64
+docker run --runtime=io.containerd.wasmtime.v1 --platform=linux/amd64 --rm sangeetakakati/rust-matrix-wasm:amd64
 
-docker run --platform=linux/arm64 --rm sangeetakakati/rust-matrix-wasm:arm64
+docker run --runtime=io.containerd.wasmtime.v1 --platform=linux/arm64 --rm sangeetakakati/rust-matrix-wasm:arm64
 
-docker run  --runtime=io.containerd.wasmtime.v1   --platform=wasi/wasm   sangeetakakati/rust-matrix-wasm:wasm
+docker run --runtime=io.containerd.wasmtime.v1   --platform=wasi/wasm   sangeetakakati/rust-matrix-wasm:wasm
 
 
 # Optimising wasm

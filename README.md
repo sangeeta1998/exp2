@@ -71,7 +71,18 @@ docker buildx build \
   --tag sangeetakakati/rust-matrix-wasm:amd64 \
   --tag sangeetakakati/rust-matrix-wasm:arm64 \
   --tag sangeetakakati/rust-matrix-wasm:wasm \
-  --push .
+  --output "type=image,push=true" \
+  --builder default .
+
+# With one tag for all
+
+docker buildx build \
+  --platform linux/amd64,linux/arm64,wasi/wasm \
+  --tag sangeetakakati/rust-matrix-wasm:latest \
+  --output "type=image,push=true" \
+  --builder default .
+
+
 
 
 # Verify the manifest list

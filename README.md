@@ -48,6 +48,18 @@ docker run --runtime=io.containerd.wasmtime.v1 --platform=linux/arm64 --rm sange
 
 docker run --runtime=io.containerd.wasmtime.v1   --platform=wasi/wasm   sangeetakakati/rust-matrix-wasm:wasm
 
+```tinygo-matrix-wasm```
+
+docker buildx build --platform wasi/wasm --tag sangeetakakati/tinygo-matrix-wasm:wasm --output "type=image,push=true" --builder default .
+
+docker run --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm --rm sangeetakakati/tinygo-matrix-wasm:wasm
+
+```tinygo-matrix-native```
+
+docker buildx build --platform linux/amd64 -t sangeetakakati/tinygo-matrix-native:latest --push .
+
+docker run --rm sangeetakakati/tinygo-matrix-native:latest
+
 
 # Optimising wasm
 

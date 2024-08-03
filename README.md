@@ -56,6 +56,12 @@ docker buildx build --platform linux/arm64 -t sangeetakakati/tinygo-matrix-nativ
 
 docker run --rm sangeetakakati/tinygo-matrix-native:arm64
 
+# Using ctr
+
+```sudo ctr images pull --platform wasi/wasm docker.io/sangeetakakati/rust-matrix-wasm:wasm```
+
+```sudo ctr run --rm --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm docker.io/sangeetakakati/rust-matrix-wasm:wasm mycontainer```
+
 # Optimising wasm
 
 ```cargo install wasm-opt --locked```

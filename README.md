@@ -58,9 +58,30 @@ docker run --rm sangeetakakati/tinygo-matrix-native:arm64
 
 # Using ctr
 
-```sudo ctr images pull --platform wasi/wasm docker.io/sangeetakakati/rust-matrix-wasm:wasm```
+```rust```
 
-```sudo ctr run --rm --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm docker.io/sangeetakakati/rust-matrix-wasm:wasm mycontainer```
+sudo ctr images pull --platform linux/amd64 docker.io/sangeetakakati/rust-matrix-native:amd64
+
+sudo ctr run --rm --platform linux/amd64 docker.io/sangeetakakati/rust-matrix-native:amd64 mycontainer
+
+Similarly for arm64
+
+sudo ctr images pull --platform wasi/wasm docker.io/sangeetakakati/rust-matrix-wasm:wasm
+
+sudo ctr run --rm --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm docker.io/sangeetakakati/rust-matrix-wasm:wasm mycontainer
+
+```tinygo```
+
+sudo ctr images pull --platform linux/amd64 docker.io/sangeetakakati/tinygo-matrix-native:amd64
+
+sudo ctr run --rm --platform linux/amd64 docker.io/sangeetakakati/tinygo-matrix-native:amd64 mycontainer
+
+Similarly for arm64
+
+sudo ctr images pull --platform wasi/wasm docker.io/sangeetakakati/tinygo-matrix-wasm:wasm
+
+sudo ctr run --rm --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm docker.io/sangeetakakati/tinygo-matrix-wasm:wasm mycontainer
+
 
 # Optimising wasm
 

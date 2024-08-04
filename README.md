@@ -12,10 +12,6 @@ Measure_wasm function performs similar steps but uses a different Docker image a
 
 ```cargo build --release --target wasm32-wasi```
 
-kakati@UNI3R9TBK3:~/exp2/serverless_wasm$ ```docker buildx build --platform wasi/wasm -t sangeetakakati/rust-matrix-wasm .```
-
-```docker run  --runtime=io.containerd.wasmtime.v1   --platform=wasi/wasm   sangeetakakati/rust-matrix-wasm```
-
 # For multi architectures:
 
 ```docker buildx build --platform linux/amd64,linux/arm64 --output "type=image,push=true" --tag sangeetakakati/rust-matrix-native:arch --builder default .```

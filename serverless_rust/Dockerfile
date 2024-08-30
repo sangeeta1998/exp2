@@ -1,4 +1,5 @@
-#First, build stage
+#Check source
+#First build stage
 FROM rust:latest as builder
 WORKDIR /usr/src/myapp
 

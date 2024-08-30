@@ -1,4 +1,5 @@
 #!/bin/bash
+# using docker
 
 # detect the host architecture
 detect_architecture() {

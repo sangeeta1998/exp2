@@ -1,3 +1,4 @@
+#using scratch
 FROM golang:1.21 AS build
 WORKDIR /app
 COPY main.go .

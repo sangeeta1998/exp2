@@ -10,6 +10,9 @@ Measure_wasm function performs similar steps but uses a different Docker image a
 
 ```cargo build --release --target wasm32-wasi```
 
+```tinygo build -o main.wasm -target=wasi main.go```
+
+
 # For multi architectures:
 
 ```docker buildx build --platform linux/amd64,linux/arm64 --output "type=image,push=true" --tag sangeetakakati/rust-matrix-native:arch --builder default .```

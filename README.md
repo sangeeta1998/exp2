@@ -10,7 +10,9 @@ Measure_wasm function performs similar steps but uses a different Docker image a
 
 ```cargo build --release --target wasm32-wasi```
 
-```tinygo build -o main.wasm -target=wasi main.go```
+```tinygo build -o serverless_tinygo.wasm -target=wasi -opt=2 main.go```
+
+```wasm-opt -O3 -o serverless_tinygo_optimized.wasm serverless_tinygo.wasm```
 
 
 # For multi architectures:

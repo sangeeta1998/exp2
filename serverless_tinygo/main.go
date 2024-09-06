@@ -35,7 +35,7 @@ func main() {
 	fmt.Printf("Main function started at: %d ms\n", startTime)
 
 	// Define matrix dimensions
-	size := 500
+	size := 100
 
 	// Generate two random matrices
 	a := make([][]float64, size)

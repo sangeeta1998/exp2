@@ -31,7 +31,7 @@ fn main() {
     println!("Main function started at: {} ms", start_time);
 
     // Define matrix dimensions
-    let size = 500;
+    let size = 100;
 
     // Generate two random matrices
     let mut a = vec![vec![0.0; size]; size];

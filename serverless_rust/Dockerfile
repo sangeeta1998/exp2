@@ -1,21 +1,20 @@
-#Check source
-#First build stage
+# Stage 1: Build the Rust binary
 FROM rust:latest as builder
 WORKDIR /usr/src/myapp
 
 COPY Cargo.toml Cargo.lock ./
 COPY src/ ./src/
-RUN cargo build --release
+RUN rustup target add x86_64-unknown-linux-musl
+RUN cargo build --release --target x86_64-unknown-linux-musl
 
-# Runtime stage
-FROM ubuntu:latest
+# Stage 2: Create a minimal image with the binary
+FROM alpine:latest
 WORKDIR /usr/local/bin
 
-RUN apt-get update && apt-get install -y \
-    && rm -rf /var/lib/apt/lists/*
+RUN apk --no-cache add ca-certificates
 
-#Copying built binary from stage1
-COPY --from=builder /usr/src/myapp/target/release/serverless_rust .
+COPY --from=builder /usr/src/myapp/target/x86_64-unknown-linux-musl/release/serverless_rust .
+
+RUN chmod +x /usr/local/bin/serverless_rust
 
 CMD ["./serverless_rust"]
-

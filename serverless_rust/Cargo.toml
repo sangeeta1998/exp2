@@ -10,3 +10,9 @@ path = "src/main.rs"
 
 [dependencies]
 rand = "0.8.4"
+
+
+[profile.release]
+lto = true
+panic = "abort"
+codegen-units = 1

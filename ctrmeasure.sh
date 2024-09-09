@@ -109,8 +109,8 @@ measure_wasm_rust() {
             sudo ctr image rm docker.io/sangeetakakati/rust-matrix-wasm:$arch > /dev/null 2>&1
             script_start_time=$(date +%s%3N)
             echo "Script start time: ${script_start_time} ms"
-            sudo ctr image pull --platform wasi/wasm docker.io/sangeetakakati/rust-matrix-wasm:$arch > /dev/null 2>&1
-            main_start_time=$(sudo ctr run --rm --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm docker.io/sangeetakakati/rust-matrix-wasm:$arch test-container 2>&1 | grep "Main function started at:" | awk '{print $5}')
+            sudo ctr image pull --platform wasm docker.io/sangeetakakati/rust-matrix-wasm:$arch > /dev/null 2>&1
+            main_start_time=$(sudo ctr run --rm --runtime=io.containerd.wasmtime.v1 --platform=wasm docker.io/sangeetakakati/rust-matrix-wasm:$arch test-container 2>&1 | grep "Main function started at:" | awk '{print $5}')
             pull_time=$((main_start_time - script_start_time))
             total_pull_time=$((total_pull_time + pull_time))
             echo "Rust Wasm Trial $i (Pull, $arch): Startup Time = $pull_time ms"
@@ -118,12 +118,12 @@ measure_wasm_rust() {
 
         for i in $(seq 1 $trials); do
             # Ensuring the image is pulled
-            sudo ctr image pull --platform wasi/wasm docker.io/sangeetakakati/rust-matrix-wasm:$arch > /dev/null 2>&1
+            sudo ctr image pull --platform wasm docker.io/sangeetakakati/rust-matrix-wasm:$arch > /dev/null 2>&1
 
             # Cold start time from cache
             script_start_time=$(date +%s%3N)
             echo "Script start time: ${script_start_time} ms"
-            main_start_time=$(sudo ctr run --rm --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm docker.io/sangeetakakati/rust-matrix-wasm:$arch test-container 2>&1 | grep "Main function started at:" | awk '{print $5}')
+            main_start_time=$(sudo ctr run --rm --runtime=io.containerd.wasmtime.v1 --platform=wasm docker.io/sangeetakakati/rust-matrix-wasm:$arch test-container 2>&1 | grep "Main function started at:" | awk '{print $5}')
             cache_time=$((main_start_time - script_start_time))
             total_cache_time=$((total_cache_time + cache_time))
             echo "Rust Wasm Trial $i (Cache, $arch): Startup Time = $cache_time ms"
@@ -150,8 +150,8 @@ measure_wasm_tinygo() {
             sudo ctr image rm docker.io/sangeetakakati/tinygo-matrix-wasm:$arch > /dev/null 2>&1
             script_start_time=$(date +%s%3N)
             echo "Script start time: ${script_start_time} ms"
-            sudo ctr image pull --platform wasi/wasm docker.io/sangeetakakati/tinygo-matrix-wasm:$arch > /dev/null 2>&1
-            main_start_time=$(sudo ctr run --rm --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm docker.io/sangeetakakati/tinygo-matrix-wasm:$arch test-container 2>&1 | grep "Main function started at:" | awk '{print $5}')
+            sudo ctr image pull --platform wasm docker.io/sangeetakakati/tinygo-matrix-wasm:$arch > /dev/null 2>&1
+            main_start_time=$(sudo ctr run --rm --runtime=io.containerd.wasmtime.v1 --platform=wasm docker.io/sangeetakakati/tinygo-matrix-wasm:$arch test-container 2>&1 | grep "Main function started at:" | awk '{print $5}')
             pull_time=$((main_start_time - script_start_time))
             total_pull_time=$((total_pull_time + pull_time))
             echo "TinyGo Wasm Trial $i (Pull, $arch): Startup Time = $pull_time ms"
@@ -159,12 +159,12 @@ measure_wasm_tinygo() {
 
         for i in $(seq 1 $trials); do
             # Ensuring the image is pulled
-            sudo ctr image pull --platform wasi/wasm docker.io/sangeetakakati/tinygo-matrix-wasm:$arch > /dev/null 2>&1
+            sudo ctr image pull --platform wasm docker.io/sangeetakakati/tinygo-matrix-wasm:$arch > /dev/null 2>&1
 
             # Cold start time from cache
             script_start_time=$(date +%s%3N)
             echo "Script start time: ${script_start_time} ms"
-            main_start_time=$(sudo ctr run --rm --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm docker.io/sangeetakakati/tinygo-matrix-wasm:$arch test-container 2>&1 | grep "Main function started at:" | awk '{print $5}')
+            main_start_time=$(sudo ctr run --rm --runtime=io.containerd.wasmtime.v1 --platform=wasm docker.io/sangeetakakati/tinygo-matrix-wasm:$arch test-container 2>&1 | grep "Main function started at:" | awk '{print $5}')
             cache_time=$((main_start_time - script_start_time))
             total_cache_time=$((total_cache_time + cache_time))
             echo "TinyGo Wasm Trial $i (Cache, $arch): Startup Time = $cache_time ms"

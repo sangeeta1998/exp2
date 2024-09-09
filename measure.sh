@@ -108,7 +108,7 @@ measure_wasm_rust() {
             docker rmi sangeetakakati/rust-matrix-wasm:$arch > /dev/null 2>&1
             script_start_time=$(date +%s%3N)
             echo "Script start time: ${script_start_time} ms"
-            main_start_time=$(docker run --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm --rm sangeetakakati/rust-matrix-wasm:$arch 2>&1 | grep "Main function started at:" | awk '{print $5}')
+            main_start_time=$(docker run --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/rust-matrix-wasm:$arch 2>&1 | grep "Main function started at:" | awk '{print $5}')
             pull_time=$((main_start_time - script_start_time))
             total_pull_time=$((total_pull_time + pull_time))
             echo "Rust Wasm Trial $i (Pull, $arch): Startup Time = $pull_time ms"
@@ -121,7 +121,7 @@ measure_wasm_rust() {
             # Cold start time from cache
             script_start_time=$(date +%s%3N)
             echo "Script start time: ${script_start_time} ms"
-            main_start_time=$(docker run --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm --rm sangeetakakati/rust-matrix-wasm:$arch 2>&1 | grep "Main function started at:" | awk '{print $5}')
+            main_start_time=$(docker run --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/rust-matrix-wasm:$arch 2>&1 | grep "Main function started at:" | awk '{print $5}')
             cache_time=$((main_start_time - script_start_time))
             total_cache_time=$((total_cache_time + cache_time))
             echo "Rust Wasm Trial $i (Cache, $arch): Startup Time = $cache_time ms"
@@ -148,7 +148,7 @@ measure_wasm_tinygo() {
             docker rmi sangeetakakati/tinygo-matrix-wasm:$arch > /dev/null 2>&1
             script_start_time=$(date +%s%3N)
             echo "Script start time: ${script_start_time} ms"
-            main_start_time=$(docker run --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm --rm sangeetakakati/tinygo-matrix-wasm:$arch 2>&1 | grep "Main function started at:" | awk '{print $5}')
+            main_start_time=$(docker run --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:$arch 2>&1 | grep "Main function started at:" | awk '{print $5}')
             pull_time=$((main_start_time - script_start_time))
             total_pull_time=$((total_pull_time + pull_time))
             echo "TinyGo Wasm Trial $i (Pull, $arch): Startup Time = $pull_time ms"
@@ -161,7 +161,7 @@ measure_wasm_tinygo() {
             # Cold start time from cache
             script_start_time=$(date +%s%3N)
             echo "Script start time: ${script_start_time} ms"
-            main_start_time=$(docker run --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm --rm sangeetakakati/tinygo-matrix-wasm:$arch 2>&1 | grep "Main function started at:" | awk '{print $5}')
+            main_start_time=$(docker run --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:$arch 2>&1 | grep "Main function started at:" | awk '{print $5}')
             cache_time=$((main_start_time - script_start_time))
             total_cache_time=$((total_cache_time + cache_time))
             echo "TinyGo Wasm Trial $i (Cache, $arch): Startup Time = $cache_time ms"

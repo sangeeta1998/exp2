@@ -15,12 +15,6 @@ Measure_wasm function performs similar steps but uses a different Docker image a
 ```wasm-opt -O3 -o serverless_tinygo_optimized.wasm serverless_tinygo.wasm```
 
 
-# For multi architectures:
-
-```docker buildx build --platform linux/amd64,linux/arm64 --output "type=image,push=true" --tag sangeetakakati/rust-matrix-native:arch --builder default .```
-
-```docker buildx build --platform wasi/wasm,linux/amd64,linux/arm64  --output "type=image,push=true" --tag sangeetakakati/rust-matrix-wasm:arch --builder default .```
-
 # For separate tags:
 
 ```rust-matrix-native```
@@ -54,6 +48,16 @@ docker run --rm sangeetakakati/tinygo-matrix-native:amd64
 docker buildx build --platform linux/arm64 -t sangeetakakati/tinygo-matrix-native:arm64 --push .
 
 docker run --rm sangeetakakati/tinygo-matrix-native:arm64
+
+#For errors, try using platform wasm instead of wasi/wasm:
+```docker buildx build --platform wasm -t sangeetakakati/tinygo-matrix-wasm:trial --output "type=image,push=true" --builder default .```
+
+Or,
+Try to remove the platform wasi/wasm32 from the build process as for some reason, docker will not recognize it. After doing that and pushing the image to docker hub it can be run like this:
+
+```docker run --rm --runtime io.containerd.runtime.wasmtime.v1 sangeetakakati/tinygo-matrix-wasm:wasm```
+
+For some reason running a wasmtime module using ctr directly is not working, although it can run a spin app. But it works using docker, which in turn uses containerd.
 
 # Using ctr
 
@@ -92,6 +96,12 @@ List the sizes now:
 
 ```ls -lh serverless_wasm.wasm serverless_wasm_optimized.wasm```
 
+# For multi architectures:
+
+```docker buildx build --platform linux/amd64,linux/arm64 --output "type=image,push=true" --tag sangeetakakati/rust-matrix-native:arch --builder default .```
+
+```docker buildx build --platform wasi/wasm,linux/amd64,linux/arm64  --output "type=image,push=true" --tag sangeetakakati/rust-matrix-wasm:arch --builder default .```
+
 
 # Build for all archs 
 
@@ -104,14 +114,6 @@ docker buildx build \
   --tag sangeetakakati/rust-matrix-wasm:amd64 \
   --tag sangeetakakati/rust-matrix-wasm:arm64 \
   --tag sangeetakakati/rust-matrix-wasm:wasm \
-  --output "type=image,push=true" \
-  --builder default .
-
-# With one tag for all
-
-docker buildx build \
-  --platform linux/amd64,linux/arm64,wasi/wasm \
-  --tag sangeetakakati/rust-matrix-wasm:latest \
   --output "type=image,push=true" \
   --builder default .
 

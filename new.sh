@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Function to detect system architecture
 detect_architecture() {
     local arch=$(uname -m)
     case $arch in
@@ -17,7 +16,7 @@ detect_architecture() {
     esac
 }
 
-# measure cold start time of a container
+
 measure_startup_time() {
     image=$1
     runtime=$2
@@ -34,7 +33,6 @@ measure_startup_time() {
     fi
 }
 
-# Repeat measurement function
 measure_multiple_times() {
     image=$1
     runtime=$2
@@ -58,16 +56,14 @@ measure_multiple_times() {
     echo "Average startup time for $image: ${avg_time}s"
 }
 
-# Detectcurrent system architecture
 arch=$(detect_architecture)
 
-# Define image names with appropriate architecture tags
 rust_native_image="sangeetakakati/rust-matrix-native:$arch"
 tinygo_native_image="sangeetakakati/tinygo-matrix-native:$arch"
 rust_wasm_image="sangeetakakati/rust-matrix-wasm:wasm"
 tinygo_wasm_image="sangeetakakati/tinygo-matrix-wasm:wasm"
 
-# Measure cold start time for  containers (repeat 3 times)
+#Repeats 
 measure_multiple_times "$rust_native_image" "" "" 3
 measure_multiple_times "$rust_wasm_image" "io.containerd.wasmtime.v1" "wasm" 3
 measure_multiple_times "$tinygo_native_image" "" "" 3

@@ -29,15 +29,15 @@ docker run --platform=linux/arm64 --rm sangeetakakati/rust-matrix-native:arm64
 
 ```rust-matrix-wasm```
 
-docker buildx build --platform wasi/wasm --tag sangeetakakati/rust-matrix-wasm:wasm --output "type=image,push=true" --builder default .
+docker buildx build --platform wasm --tag sangeetakakati/rust-matrix-wasm:wasm --output "type=image,push=true" --builder default .
 
-docker run --runtime=io.containerd.wasmtime.v1   --platform=wasi/wasm   sangeetakakati/rust-matrix-wasm:wasm
+docker run --runtime=io.containerd.wasmtime.v1   --platform=wasm   sangeetakakati/rust-matrix-wasm:wasm
 
 ```tinygo-matrix-wasm```
 
-docker buildx build --platform wasi/wasm --tag sangeetakakati/tinygo-matrix-wasm:wasm --output "type=image,push=true" --builder default .
+docker buildx build --platform wasm --tag sangeetakakati/tinygo-matrix-wasm:wasm --output "type=image,push=true" --builder default .
 
-docker run --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm --rm sangeetakakati/tinygo-matrix-wasm:wasm
+docker run --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:wasm
 
 ```tinygo-matrix-native```
 

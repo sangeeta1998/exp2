@@ -1,0 +1,103 @@
+NANO2, ARM64
+Measuring startup time for sangeetakakati/rust-matrix-native:arm64 with 3 repetitions...
+Run 1:
+real    0m3,828s
+Run 2:
+real    0m0,969s
+Run 3:
+real    0m0,914s
+Average startup time for sangeetakakati/rust-matrix-native:arm64: 1.903s
+Measuring startup time for sangeetakakati/rust-matrix-wasm:wasm with 3 repetitions...
+Run 1:
+real    0m7,219s
+Run 2:
+real    0m4,385s
+Run 3:
+real    0m4,691s
+Average startup time for sangeetakakati/rust-matrix-wasm:wasm: 5.431s
+Measuring startup time for sangeetakakati/tinygo-matrix-native:arm64 with 3 repetitions...
+Run 1:
+real    0m3,049s
+Run 2:
+real    0m1,159s
+Run 3:
+real    0m1,017s
+Average startup time for sangeetakakati/tinygo-matrix-native:arm64: 1.741s
+Measuring startup time for sangeetakakati/tinygo-matrix-wasm:wasm with 3 repetitions...
+Run 1:
+real    0m18,462s
+Run 2:
+real    0m18,116s
+Run 3:
+real    0m16,058s
+Average startup time for sangeetakakati/tinygo-matrix-wasm:wasm: 17.545s
+
+AWS AMD64,
+
+Measuring startup time for sangeetakakati/rust-matrix-native:amd64 with 3 repetitions...
+Run 1:
+real    0m2.159s
+Run 2:
+real    0m0.379s
+Run 3:
+real    0m0.389s
+Average startup time for sangeetakakati/rust-matrix-native:amd64: .975s
+Measuring startup time for sangeetakakati/rust-matrix-wasm:wasm with 3 repetitions...
+Run 1:
+real    0m4.906s
+Run 2:
+real    0m2.392s
+Run 3:
+real    0m2.395s
+Average startup time for sangeetakakati/rust-matrix-wasm:wasm: 3.231s
+Measuring startup time for sangeetakakati/tinygo-matrix-native:amd64 with 3 repetitions...
+Run 1:
+real    0m2.436s
+Run 2:
+real    0m0.392s
+Run 3:
+real    0m0.415s
+Average startup time for sangeetakakati/tinygo-matrix-native:amd64: 1.081s
+Measuring startup time for sangeetakakati/tinygo-matrix-wasm:wasm with 3 repetitions...
+Run 1:
+real    0m11.565s
+Run 2:
+real    0m9.388s
+Run 3:
+real    0m9.396s
+Average startup time for sangeetakakati/tinygo-matrix-wasm:wasm: 10.116s
+
+LOCAL MACHINE, AMD64
+
+Measuring startup time for sangeetakakati/rust-matrix-native:amd64 with 3 repetitions...
+Run 1:
+real    0m2.746s
+Run 2:
+real    0m0.748s
+Run 3:
+real    0m0.782s
+Average startup time for sangeetakakati/rust-matrix-native:amd64: 1.425s
+Measuring startup time for sangeetakakati/rust-matrix-wasm:wasm with 3 repetitions...
+Run 1:
+real    0m1.935s
+Run 2:
+real    0m1.185s
+Run 3:
+real    0m1.636s
+Average startup time for sangeetakakati/rust-matrix-wasm:wasm: 1.585s
+Measuring startup time for sangeetakakati/tinygo-matrix-native:amd64 with 3 repetitions...
+Run 1:
+real    0m2.976s
+Run 2:
+real    0m0.897s
+Run 3:
+real    0m1.032s
+Average startup time for sangeetakakati/tinygo-matrix-native:amd64: 1.635s
+Measuring startup time for sangeetakakati/tinygo-matrix-wasm:wasm with 3 repetitions...
+Run 1:
+real    0m2.726s
+Run 2:
+real    0m1.972s
+Run 3:
+real    0m1.958s
+Average startup time for sangeetakakati/tinygo-matrix-wasm:wasm: 2.218s

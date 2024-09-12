@@ -1,14 +1,17 @@
-# Using the latest TinyGo image which supports multiple platforms
+# Build stage
 FROM tinygo/tinygo:latest AS build
 
 WORKDIR /app
 COPY main.go .
 
-# Building the Go program using TinyGo (using opt2 to because for rust we used release mode)
+# Build the Go program using TinyGo with optimizations
 RUN tinygo build -opt=2 -o /app/serverless_tinygo main.go
 
-# Create a minimal runtime image
+# Strip debugging information from the binary
+RUN strip /app/serverless_tinygo
+
+# Runtime stage
 FROM scratch
 COPY --from=build /app/serverless_tinygo /serverless_tinygo
-ENTRYPOINT ["/serverless_tinygo"]
 
+ENTRYPOINT ["/serverless_tinygo"]

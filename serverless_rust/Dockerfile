@@ -2,20 +2,21 @@
 FROM rust:alpine as builder
 WORKDIR /usr/src/myapp
 
-# Installing necessary build dependencies, got error for c runtime initialisation files using alpine
-RUN apk add --no-cache musl-dev gcc
+# Installing necessary build dependencies
+RUN apk add --no-cache musl-dev gcc upx binutils
 
 COPY Cargo.toml Cargo.lock ./
 RUN cargo fetch
 COPY src/ ./src/
 RUN cargo build --release
 
+# Strip and compress the binary
+RUN strip /usr/src/myapp/target/release/serverless_rust
+RUN upx /usr/src/myapp/target/release/serverless_rust
+
 # Runtime stage
-FROM alpine:latest
-WORKDIR /usr/local/bin
+FROM scratch
+COPY --from=builder /usr/src/myapp/target/release/serverless_rust /serverless_rust
 
-# Copying built binary from the builder stage
-COPY --from=builder /usr/src/myapp/target/release/serverless_rust .
-
-CMD ["./serverless_rust"]
+CMD ["/serverless_rust"]
 

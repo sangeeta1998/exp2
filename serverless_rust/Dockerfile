@@ -12,7 +12,7 @@ RUN cargo build --release
 
 # Strip and compress the binary
 RUN strip /usr/src/myapp/target/release/serverless_rust
-RUN upx /usr/src/myapp/target/release/serverless_rust
+#RUN upx /usr/src/myapp/target/release/serverless_rust
 
 # Runtime stage
 FROM scratch

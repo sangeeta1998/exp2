@@ -1,5 +1,7 @@
 #!/bin/bash
+# using docker
 
+# detect the host architecture
 detect_architecture() {
     local arch=$(uname -m)
     case $arch in
@@ -16,55 +18,224 @@ detect_architecture() {
     esac
 }
 
+measure_native_rust() {
+    local arch=$1
+    trials=10
 
-measure_startup_time() {
-    image=$1
-    runtime=$2
-    platform=$3
-    container_name="test_container"
+    echo "Measuring Native Rust for $arch..."
 
-    # Measure the cold start time
-    if [ -z "$runtime" ]; then
-        # For native containers
-        { time (docker run --name $container_name --rm $image > /dev/null); } 2>&1 | grep real
-    else
-        # For Wasm containers
-        { time (docker run --runtime=$runtime --platform=$platform --name $container_name --rm $image > /dev/null); } 2>&1 | grep real
-    fi
-}
+    total_pull_time=0
+    total_create_time=0
+    total_start_time=0
+    total_startup_time=0
 
-measure_multiple_times() {
-    image=$1
-    runtime=$2
-    platform=$3
-    runs=$4
+    for i in $(seq 1 $trials); do
+        # 1. Cold start time from pull
+        docker rmi -f sangeetakakati/rust-matrix-native:$arch > /dev/null 2>&1
 
-    echo "Measuring startup time for $image with $runs repetitions..."
-    total_time=0
+        pull_start=$(date +%s%3N)
+        docker pull sangeetakakati/rust-matrix-native:$arch > /dev/null 2>&1
+        pull_end=$(date +%s%3N)
+        pull_time=$((pull_end - pull_start))
+        total_pull_time=$((total_pull_time + pull_time))
+        echo "Rust Trial $i (Pull, $arch): Pull Time = $pull_time ms"
 
-    for i in $(seq 1 $runs); do
-        echo "Run $i:"
-        result=$(measure_startup_time $image $runtime $platform)
-        echo "$result"
+        # 2. Container creation time
+        create_start=$(date +%s%3N)
+        container_id=$(docker create --platform=linux/$arch sangeetakakati/rust-matrix-native:$arch)
+        create_end=$(date +%s%3N)
+        create_time=$((create_end - create_start))
+        total_create_time=$((total_create_time + create_time))
+        echo "Rust Trial $i (Pull, $arch): Container Creation Time = $create_time ms"
 
-        # Extract time in seconds, replace comma with dot, and remove 's'
-        time_in_seconds=$(echo $result | awk '{print $2}' | sed 's/,/./g' | cut -d'm' -f2 | sed 's/s//')
-        total_time=$(echo "$total_time + $time_in_seconds" | bc)
+        # 3. Container start time
+        start_start=$(date +%s%3N)
+        docker start $container_id > /dev/null 2>&1
+        start_end=$(date +%s%3N)
+        start_time=$((start_end - start_start))
+        total_start_time=$((total_start_time + start_time))
+        echo "Rust Trial $i (Pull, $arch): Container Start Time = $start_time ms"
+
+        # 4. startup time (when the main function starts)
+        startup_start_time=$(date +%s%3N)
+        main_start_time=$(docker run --platform=linux/$arch --rm sangeetakakati/rust-matrix-native:$arch 2>&1 | grep "Main function started at:" | awk '{print $5}')
+        startup_time=$((main_start_time - startup_start_time))
+        total_startup_time=$((total_startup_time + startup_time))
+        echo "Rust Trial $i (Pull, $arch): startup Time = $startup_time ms"
     done
 
-    avg_time=$(echo "scale=3; $total_time / $runs" | bc)
-    echo "Average startup time for $image: ${avg_time}s"
+    echo "Average Rust cold start time from pull ($arch): $((total_pull_time / trials)) ms"
+    echo "Average Rust container creation time ($arch): $((total_create_time / trials)) ms"
+    echo "Average Rust container start time ($arch): $((total_start_time / trials)) ms"
+    echo "Average Rust startup time ($arch): $((total_startup_time / trials)) ms"
 }
 
-arch=$(detect_architecture)
+measure_native_tinygo() {
+    local arch=$1
+    trials=10
 
-rust_native_image="sangeetakakati/rust-matrix-native:$arch"
-tinygo_native_image="sangeetakakati/tinygo-matrix-native:$arch"
-rust_wasm_image="sangeetakakati/rust-matrix-wasm:wasm"
-tinygo_wasm_image="sangeetakakati/tinygo-matrix-wasm:wasm"
+    echo "Measuring Native TinyGo for $arch..."
 
-#Repeats 
-measure_multiple_times "$rust_native_image" "" "" 3
-measure_multiple_times "$rust_wasm_image" "io.containerd.wasmtime.v1" "wasm" 3
-measure_multiple_times "$tinygo_native_image" "" "" 3
-measure_multiple_times "$tinygo_wasm_image" "io.containerd.wasmtime.v1" "wasm" 3
+    total_pull_time=0
+    total_create_time=0
+    total_start_time=0
+    total_startup_time=0
+
+    for i in $(seq 1 $trials); do
+        # 1. Cold start time from pull
+        docker rmi -f sangeetakakati/tinygo-matrix-native:$arch > /dev/null 2>&1
+
+        pull_start=$(date +%s%3N)
+        docker pull sangeetakakati/tinygo-matrix-native:$arch > /dev/null 2>&1
+        pull_end=$(date +%s%3N)
+        pull_time=$((pull_end - pull_start))
+        total_pull_time=$((total_pull_time + pull_time))
+        echo "TinyGo Trial $i (Pull, $arch): Pull Time = $pull_time ms"
+
+        # 2. Container creation time
+        create_start=$(date +%s%3N)
+        container_id=$(docker create --platform=linux/$arch sangeetakakati/tinygo-matrix-native:$arch)
+        create_end=$(date +%s%3N)
+        create_time=$((create_end - create_start))
+        total_create_time=$((total_create_time + create_time))
+        echo "TinyGo Trial $i (Pull, $arch): Container Creation Time = $create_time ms"
+
+        # 3. Container start time
+        start_start=$(date +%s%3N)
+        docker start $container_id > /dev/null 2>&1
+        start_end=$(date +%s%3N)
+        start_time=$((start_end - start_start))
+        total_start_time=$((total_start_time + start_time))
+        echo "TinyGo Trial $i (Pull, $arch): Container Start Time = $start_time ms"
+
+        # 4. startup time (when the main function starts)
+        startup_start_time=$(date +%s%3N)
+        main_start_time=$(docker run --platform=linux/$arch --rm sangeetakakati/tinygo-matrix-native:$arch 2>&1 | grep "Main function started at:" | awk '{print $5}')
+        startup_time=$((main_start_time - startup_start_time))
+        total_startup_time=$((total_startup_time + startup_time))
+        echo "TinyGo Trial $i (Pull, $arch): startup Time = $startup_time ms"
+    done
+
+    echo "Average TinyGo cold start time from pull ($arch): $((total_pull_time / trials)) ms"
+    echo "Average TinyGo container creation time ($arch): $((total_create_time / trials)) ms"
+    echo "Average TinyGo container start time ($arch): $((total_start_time / trials)) ms"
+    echo "Average TinyGo startup time ($arch): $((total_startup_time / trials)) ms"
+}
+
+measure_wasm_rust() {
+    trials=10
+    architectures=("wasm")
+
+    echo "Measuring Wasm Rust..."
+
+    for arch in "${architectures[@]}"; do
+        echo "Architecture: $arch"
+        total_pull_time=0
+        total_create_time=0
+        total_start_time=0
+        total_startup_time=0
+
+        for i in $(seq 1 $trials); do
+            # 1. Cold start time from pull
+            docker rmi -f sangeetakakati/rust-matrix-wasm:$arch > /dev/null 2>&1
+
+            pull_start=$(date +%s%3N)
+            docker pull --platform wasm sangeetakakati/rust-matrix-wasm:$arch > /dev/null 2>&1
+            pull_end=$(date +%s%3N)
+            pull_time=$((pull_end - pull_start))
+            total_pull_time=$((total_pull_time + pull_time))
+            echo "Rust Wasm Trial $i (Pull, $arch): Pull Time = $pull_time ms"
+
+            # 2. Container creation time
+            create_start=$(date +%s%3N)
+            container_id=$(docker create --runtime=io.containerd.wasmtime.v1 --platform=wasm sangeetakakati/rust-matrix-wasm:$arch)
+            create_end=$(date +%s%3N)
+            create_time=$((create_end - create_start))
+            total_create_time=$((total_create_time + create_time))
+            echo "Rust Wasm Trial $i (Pull, $arch): Container Creation Time = $create_time ms"
+
+            # 3. Container start time
+            start_start=$(date +%s%3N)
+            docker start $container_id > /dev/null 2>&1
+            start_end=$(date +%s%3N)
+            start_time=$((start_end - start_start))
+            total_start_time=$((total_start_time + start_time))
+            echo "Rust Wasm Trial $i (Pull, $arch): Container Start Time = $start_time ms"
+
+            # 4. startup time (when the main function starts)
+            startup_start_time=$(date +%s%3N)
+            main_start_time=$(docker run --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/rust-matrix-wasm:$arch 2>&1 | grep "Main function started at:" | awk '{print $5}')
+            startup_time=$((main_start_time - startup_start_time))
+            total_startup_time=$((total_startup_time + startup_time))
+            echo "Rust Wasm Trial $i (Pull, $arch): startup Time = $startup_time ms"
+        done
+
+        echo "Average Rust Wasm cold start time from pull ($arch): $((total_pull_time / trials)) ms"
+        echo "Average Rust Wasm container creation time ($arch): $((total_create_time / trials)) ms"
+        echo "Average Rust Wasm container start time ($arch): $((total_start_time / trials)) ms"
+        echo "Average Rust Wasm startup time ($arch): $((total_startup_time / trials)) ms"
+    done
+}
+
+measure_wasm_tinygo() {
+    trials=10
+    architectures=("wasm")
+
+    echo "Measuring Wasm TinyGo..."
+
+    for arch in "${architectures[@]}"; do
+        echo "Architecture: $arch"
+        total_pull_time=0
+        total_create_time=0
+        total_start_time=0
+        total_startup_time=0
+
+        for i in $(seq 1 $trials); do
+            # 1. Cold start time from pull
+            docker rmi -f sangeetakakati/tinygo-matrix-wasm:$arch > /dev/null 2>&1
+
+            pull_start=$(date +%s%3N)
+            docker pull --platform wasm sangeetakakati/tinygo-matrix-wasm:$arch > /dev/null 2>&1
+            pull_end=$(date +%s%3N)
+            pull_time=$((pull_end - pull_start))
+            total_pull_time=$((total_pull_time + pull_time))
+            echo "TinyGo Wasm Trial $i (Pull, $arch): Pull Time = $pull_time ms"
+
+            # 2. Container creation time
+            create_start=$(date +%s%3N)
+            container_id=$(docker create --runtime=io.containerd.wasmtime.v1 --platform=wasm sangeetakakati/tinygo-matrix-wasm:$arch)
+            create_end=$(date +%s%3N)
+            create_time=$((create_end - create_start))
+            total_create_time=$((total_create_time + create_time))
+            echo "TinyGo Wasm Trial $i (Pull, $arch): Container Creation Time = $create_time ms"
+
+            # 3. Container start time
+            start_start=$(date +%s%3N)
+            docker start $container_id > /dev/null 2>&1
+            start_end=$(date +%s%3N)
+            start_time=$((start_end - start_start))
+            total_start_time=$((total_start_time + start_time))
+            echo "TinyGo Wasm Trial $i (Pull, $arch): Container Start Time = $start_time ms"
+
+            # 4. startup time (when the main function starts)
+            startup_start_time=$(date +%s%3N)
+            main_start_time=$(docker run --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:$arch 2>&1 | grep "Main function started at:" | awk '{print $5}')
+            startup_time=$((main_start_time - startup_start_time))
+            total_startup_time=$((total_startup_time + startup_time))
+            echo "TinyGo Wasm Trial $i (Pull, $arch): startup Time = $startup_time ms"
+        done
+
+        echo "Average TinyGo Wasm cold start time from pull ($arch): $((total_pull_time / trials)) ms"
+        echo "Average TinyGo Wasm container creation time ($arch): $((total_create_time / trials)) ms"
+        echo "Average TinyGo Wasm container start time ($arch): $((total_start_time / trials)) ms"
+        echo "Average TinyGo Wasm startup time ($arch): $((total_startup_time / trials)) ms"
+    done
+}
+
+architecture=$(detect_architecture)
+
+# Measure cold start times for different containers
+measure_native_rust $architecture
+measure_native_tinygo $architecture
+measure_wasm_rust
+measure_wasm_tinygo

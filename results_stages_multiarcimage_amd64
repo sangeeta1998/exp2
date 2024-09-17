@@ -1,0 +1,182 @@
+Measuring Native Rust for amd64...
+Rust Trial 1 (Pull, amd64): Pull Time = 2026 ms
+Rust Trial 1 (Pull, amd64): Container Creation Time = 69 ms
+Rust Trial 1 (Pull, amd64): Container Start Time = 256 ms
+Rust Trial 1 (Pull, amd64): startup Time = 289 ms
+Rust Trial 2 (Pull, amd64): Pull Time = 2024 ms
+Rust Trial 2 (Pull, amd64): Container Creation Time = 71 ms
+Rust Trial 2 (Pull, amd64): Container Start Time = 262 ms
+Rust Trial 2 (Pull, amd64): startup Time = 288 ms
+Rust Trial 3 (Pull, amd64): Pull Time = 1962 ms
+Rust Trial 3 (Pull, amd64): Container Creation Time = 75 ms
+Rust Trial 3 (Pull, amd64): Container Start Time = 235 ms
+Rust Trial 3 (Pull, amd64): startup Time = 281 ms
+Rust Trial 4 (Pull, amd64): Pull Time = 1971 ms
+Rust Trial 4 (Pull, amd64): Container Creation Time = 67 ms
+Rust Trial 4 (Pull, amd64): Container Start Time = 262 ms
+Rust Trial 4 (Pull, amd64): startup Time = 271 ms
+Rust Trial 5 (Pull, amd64): Pull Time = 1970 ms
+Rust Trial 5 (Pull, amd64): Container Creation Time = 65 ms
+Rust Trial 5 (Pull, amd64): Container Start Time = 232 ms
+Rust Trial 5 (Pull, amd64): startup Time = 299 ms
+Rust Trial 6 (Pull, amd64): Pull Time = 1964 ms
+Rust Trial 6 (Pull, amd64): Container Creation Time = 66 ms
+Rust Trial 6 (Pull, amd64): Container Start Time = 250 ms
+Rust Trial 6 (Pull, amd64): startup Time = 302 ms
+Rust Trial 7 (Pull, amd64): Pull Time = 1994 ms
+Rust Trial 7 (Pull, amd64): Container Creation Time = 73 ms
+Rust Trial 7 (Pull, amd64): Container Start Time = 217 ms
+Rust Trial 7 (Pull, amd64): startup Time = 275 ms
+Rust Trial 8 (Pull, amd64): Pull Time = 1972 ms
+Rust Trial 8 (Pull, amd64): Container Creation Time = 69 ms
+Rust Trial 8 (Pull, amd64): Container Start Time = 243 ms
+Rust Trial 8 (Pull, amd64): startup Time = 284 ms
+Rust Trial 9 (Pull, amd64): Pull Time = 2003 ms
+Rust Trial 9 (Pull, amd64): Container Creation Time = 67 ms
+Rust Trial 9 (Pull, amd64): Container Start Time = 219 ms
+Rust Trial 9 (Pull, amd64): startup Time = 275 ms
+Rust Trial 10 (Pull, amd64): Pull Time = 1988 ms
+Rust Trial 10 (Pull, amd64): Container Creation Time = 63 ms
+Rust Trial 10 (Pull, amd64): Container Start Time = 219 ms
+Rust Trial 10 (Pull, amd64): startup Time = 305 ms
+Average Rust cold start time from pull (amd64): 1987 ms
+Average Rust container creation time (amd64): 68 ms
+Average Rust container start time (amd64): 239 ms
+Average Rust startup time (amd64): 286 ms
+Measuring Native TinyGo for amd64...
+TinyGo Trial 1 (Pull, amd64): Pull Time = 2047 ms
+TinyGo Trial 1 (Pull, amd64): Container Creation Time = 71 ms
+TinyGo Trial 1 (Pull, amd64): Container Start Time = 220 ms
+TinyGo Trial 1 (Pull, amd64): startup Time = 299 ms
+TinyGo Trial 2 (Pull, amd64): Pull Time = 1982 ms
+TinyGo Trial 2 (Pull, amd64): Container Creation Time = 70 ms
+TinyGo Trial 2 (Pull, amd64): Container Start Time = 223 ms
+TinyGo Trial 2 (Pull, amd64): startup Time = 270 ms
+TinyGo Trial 3 (Pull, amd64): Pull Time = 2033 ms
+TinyGo Trial 3 (Pull, amd64): Container Creation Time = 61 ms
+TinyGo Trial 3 (Pull, amd64): Container Start Time = 259 ms
+TinyGo Trial 3 (Pull, amd64): startup Time = 286 ms
+TinyGo Trial 4 (Pull, amd64): Pull Time = 1961 ms
+TinyGo Trial 4 (Pull, amd64): Container Creation Time = 71 ms
+TinyGo Trial 4 (Pull, amd64): Container Start Time = 234 ms
+TinyGo Trial 4 (Pull, amd64): startup Time = 294 ms
+TinyGo Trial 5 (Pull, amd64): Pull Time = 1994 ms
+TinyGo Trial 5 (Pull, amd64): Container Creation Time = 69 ms
+TinyGo Trial 5 (Pull, amd64): Container Start Time = 215 ms
+TinyGo Trial 5 (Pull, amd64): startup Time = 287 ms
+TinyGo Trial 6 (Pull, amd64): Pull Time = 1972 ms
+TinyGo Trial 6 (Pull, amd64): Container Creation Time = 71 ms
+TinyGo Trial 6 (Pull, amd64): Container Start Time = 215 ms
+TinyGo Trial 6 (Pull, amd64): startup Time = 267 ms
+TinyGo Trial 7 (Pull, amd64): Pull Time = 2073 ms
+TinyGo Trial 7 (Pull, amd64): Container Creation Time = 69 ms
+TinyGo Trial 7 (Pull, amd64): Container Start Time = 241 ms
+TinyGo Trial 7 (Pull, amd64): startup Time = 288 ms
+TinyGo Trial 8 (Pull, amd64): Pull Time = 1981 ms
+TinyGo Trial 8 (Pull, amd64): Container Creation Time = 67 ms
+TinyGo Trial 8 (Pull, amd64): Container Start Time = 228 ms
+TinyGo Trial 8 (Pull, amd64): startup Time = 271 ms
+TinyGo Trial 9 (Pull, amd64): Pull Time = 1991 ms
+TinyGo Trial 9 (Pull, amd64): Container Creation Time = 68 ms
+TinyGo Trial 9 (Pull, amd64): Container Start Time = 224 ms
+TinyGo Trial 9 (Pull, amd64): startup Time = 270 ms
+TinyGo Trial 10 (Pull, amd64): Pull Time = 2038 ms
+TinyGo Trial 10 (Pull, amd64): Container Creation Time = 64 ms
+TinyGo Trial 10 (Pull, amd64): Container Start Time = 282 ms
+TinyGo Trial 10 (Pull, amd64): startup Time = 261 ms
+Average TinyGo cold start time from pull (amd64): 2007 ms
+Average TinyGo container creation time (amd64): 68 ms
+Average TinyGo container start time (amd64): 234 ms
+Average TinyGo startup time (amd64): 279 ms
+Measuring Wasm Rust...
+Architecture: wasm
+Rust Wasm Trial 1 (Pull, wasm): Pull Time = 2058 ms
+Rust Wasm Trial 1 (Pull, wasm): Container Creation Time = 72 ms
+Rust Wasm Trial 1 (Pull, wasm): Container Start Time = 267 ms
+Rust Wasm Trial 1 (Pull, wasm): startup Time = 2840 ms
+Rust Wasm Trial 2 (Pull, wasm): Pull Time = 1929 ms
+Rust Wasm Trial 2 (Pull, wasm): Container Creation Time = 68 ms
+Rust Wasm Trial 2 (Pull, wasm): Container Start Time = 275 ms
+Rust Wasm Trial 2 (Pull, wasm): startup Time = 2940 ms
+Rust Wasm Trial 3 (Pull, wasm): Pull Time = 2001 ms
+Rust Wasm Trial 3 (Pull, wasm): Container Creation Time = 63 ms
+Rust Wasm Trial 3 (Pull, wasm): Container Start Time = 307 ms
+Rust Wasm Trial 3 (Pull, wasm): startup Time = 3331 ms
+Rust Wasm Trial 4 (Pull, wasm): Pull Time = 1927 ms
+Rust Wasm Trial 4 (Pull, wasm): Container Creation Time = 70 ms
+Rust Wasm Trial 4 (Pull, wasm): Container Start Time = 299 ms
+Rust Wasm Trial 4 (Pull, wasm): startup Time = 3395 ms
+Rust Wasm Trial 5 (Pull, wasm): Pull Time = 1946 ms
+Rust Wasm Trial 5 (Pull, wasm): Container Creation Time = 72 ms
+Rust Wasm Trial 5 (Pull, wasm): Container Start Time = 302 ms
+Rust Wasm Trial 5 (Pull, wasm): startup Time = 3290 ms
+Rust Wasm Trial 6 (Pull, wasm): Pull Time = 1941 ms
+Rust Wasm Trial 6 (Pull, wasm): Container Creation Time = 64 ms
+Rust Wasm Trial 6 (Pull, wasm): Container Start Time = 296 ms
+Rust Wasm Trial 6 (Pull, wasm): startup Time = 3322 ms
+Rust Wasm Trial 7 (Pull, wasm): Pull Time = 1977 ms
+Rust Wasm Trial 7 (Pull, wasm): Container Creation Time = 68 ms
+Rust Wasm Trial 7 (Pull, wasm): Container Start Time = 363 ms
+Rust Wasm Trial 7 (Pull, wasm): startup Time = 3368 ms
+Rust Wasm Trial 8 (Pull, wasm): Pull Time = 1962 ms
+Rust Wasm Trial 8 (Pull, wasm): Container Creation Time = 90 ms
+Rust Wasm Trial 8 (Pull, wasm): Container Start Time = 307 ms
+Rust Wasm Trial 8 (Pull, wasm): startup Time = 3397 ms
+Rust Wasm Trial 9 (Pull, wasm): Pull Time = 1956 ms
+Rust Wasm Trial 9 (Pull, wasm): Container Creation Time = 61 ms
+Rust Wasm Trial 9 (Pull, wasm): Container Start Time = 302 ms
+Rust Wasm Trial 9 (Pull, wasm): startup Time = 3244 ms
+Rust Wasm Trial 10 (Pull, wasm): Pull Time = 1943 ms
+Rust Wasm Trial 10 (Pull, wasm): Container Creation Time = 65 ms
+Rust Wasm Trial 10 (Pull, wasm): Container Start Time = 296 ms
+Rust Wasm Trial 10 (Pull, wasm): startup Time = 3156 ms
+Average Rust Wasm cold start time from pull (wasm): 1964 ms
+Average Rust Wasm container creation time (wasm): 69 ms
+Average Rust Wasm container start time (wasm): 301 ms
+Average Rust Wasm startup time (wasm): 3228 ms
+Measuring Wasm TinyGo...
+Architecture: wasm
+TinyGo Wasm Trial 1 (Pull, wasm): Pull Time = 2039 ms
+TinyGo Wasm Trial 1 (Pull, wasm): Container Creation Time = 73 ms
+TinyGo Wasm Trial 1 (Pull, wasm): Container Start Time = 281 ms
+TinyGo Wasm Trial 1 (Pull, wasm): startup Time = 14072 ms
+TinyGo Wasm Trial 2 (Pull, wasm): Pull Time = 2000 ms
+TinyGo Wasm Trial 2 (Pull, wasm): Container Creation Time = 76 ms
+TinyGo Wasm Trial 2 (Pull, wasm): Container Start Time = 332 ms
+TinyGo Wasm Trial 2 (Pull, wasm): startup Time = 14267 ms
+TinyGo Wasm Trial 3 (Pull, wasm): Pull Time = 2058 ms
+TinyGo Wasm Trial 3 (Pull, wasm): Container Creation Time = 64 ms
+TinyGo Wasm Trial 3 (Pull, wasm): Container Start Time = 304 ms
+TinyGo Wasm Trial 3 (Pull, wasm): startup Time = 14346 ms
+TinyGo Wasm Trial 4 (Pull, wasm): Pull Time = 1998 ms
+TinyGo Wasm Trial 4 (Pull, wasm): Container Creation Time = 73 ms
+TinyGo Wasm Trial 4 (Pull, wasm): Container Start Time = 315 ms
+TinyGo Wasm Trial 4 (Pull, wasm): startup Time = 14593 ms
+TinyGo Wasm Trial 5 (Pull, wasm): Pull Time = 1955 ms
+TinyGo Wasm Trial 5 (Pull, wasm): Container Creation Time = 73 ms
+TinyGo Wasm Trial 5 (Pull, wasm): Container Start Time = 298 ms
+TinyGo Wasm Trial 5 (Pull, wasm): startup Time = 14177 ms
+TinyGo Wasm Trial 6 (Pull, wasm): Pull Time = 1959 ms
+TinyGo Wasm Trial 6 (Pull, wasm): Container Creation Time = 69 ms
+TinyGo Wasm Trial 6 (Pull, wasm): Container Start Time = 298 ms
+TinyGo Wasm Trial 6 (Pull, wasm): startup Time = 14307 ms
+TinyGo Wasm Trial 7 (Pull, wasm): Pull Time = 1970 ms
+TinyGo Wasm Trial 7 (Pull, wasm): Container Creation Time = 67 ms
+TinyGo Wasm Trial 7 (Pull, wasm): Container Start Time = 341 ms
+TinyGo Wasm Trial 7 (Pull, wasm): startup Time = 14533 ms
+TinyGo Wasm Trial 8 (Pull, wasm): Pull Time = 2000 ms
+TinyGo Wasm Trial 8 (Pull, wasm): Container Creation Time = 63 ms
+TinyGo Wasm Trial 8 (Pull, wasm): Container Start Time = 301 ms
+TinyGo Wasm Trial 8 (Pull, wasm): startup Time = 14271 ms
+TinyGo Wasm Trial 9 (Pull, wasm): Pull Time = 1953 ms
+TinyGo Wasm Trial 9 (Pull, wasm): Container Creation Time = 62 ms
+TinyGo Wasm Trial 9 (Pull, wasm): Container Start Time = 326 ms
+TinyGo Wasm Trial 9 (Pull, wasm): startup Time = 14369 ms
+TinyGo Wasm Trial 10 (Pull, wasm): Pull Time = 1973 ms
+TinyGo Wasm Trial 10 (Pull, wasm): Container Creation Time = 66 ms
+TinyGo Wasm Trial 10 (Pull, wasm): Container Start Time = 280 ms
+TinyGo Wasm Trial 10 (Pull, wasm): startup Time = 14626 ms
+Average TinyGo Wasm cold start time from pull (wasm): 1990 ms
+Average TinyGo Wasm container creation time (wasm): 68 ms
+Average TinyGo Wasm container start time (wasm): 307 ms
+Average TinyGo Wasm startup time (wasm): 14356 ms

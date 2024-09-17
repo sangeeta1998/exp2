@@ -26,12 +26,12 @@ measure_native_rust() {
 
     for i in $(seq 1 $trials); do
         # Cold start time from pull
-        docker rmi -f sangeetakakati/rust-matrix-native:$arch > /dev/null 2>&1
+        docker rmi -f sangeetakakati/rust-matrix-native:latest > /dev/null 2>&1
         script_start_time=$(date +%s%3N)
         echo "Script start time: ${script_start_time} ms"
 
         # Measure time and memory usage with /usr/bin/time
-        /usr/bin/time -v docker run --platform=linux/$arch --rm sangeetakakati/rust-matrix-native:$arch 2>&1 | tee output_native_rust.log
+        /usr/bin/time -v docker run --platform=linux/$arch --rm sangeetakakati/rust-matrix-native:latest 2>&1 | tee output_native_rust.log
 
         # Extract the memory usage (Maximum resident set size)
         memory_usage=$(grep "Maximum resident set size" output_native_rust.log | awk '{print $6}')
@@ -53,12 +53,12 @@ measure_native_tinygo() {
 
     for i in $(seq 1 $trials); do
         # Cold start time from pull
-        docker rmi -f sangeetakakati/tinygo-matrix-native:$arch > /dev/null 2>&1
+        docker rmi -f sangeetakakati/tinygo-matrix-native:latest > /dev/null 2>&1
         script_start_time=$(date +%s%3N)
         echo "Script start time: ${script_start_time} ms"
 
         # Measure time and memory usage with /usr/bin/time
-        /usr/bin/time -v docker run --platform=linux/$arch --rm sangeetakakati/tinygo-matrix-native:$arch 2>&1 | tee output_native_tinygo.log
+        /usr/bin/time -v docker run --platform=linux/$arch --rm sangeetakakati/tinygo-matrix-native:latest 2>&1 | tee output_native_tinygo.log
 
         # Extract the memory usage (Maximum resident set size)
         memory_usage=$(grep "Maximum resident set size" output_native_tinygo.log | awk '{print $6}')

@@ -31,10 +31,10 @@ measure_native_rust() {
 
     for i in $(seq 1 $trials); do
         # 1. Cold start time from pull
-        docker rmi -f sangeetakakati/rust-matrix-native:$arch > /dev/null 2>&1
+        docker rmi -f sangeetakakati/rust-matrix-native:latest > /dev/null 2>&1
 
         pull_start=$(date +%s%3N)
-        docker pull sangeetakakati/rust-matrix-native:$arch > /dev/null 2>&1
+        docker pull sangeetakakati/rust-matrix-native:latest > /dev/null 2>&1
         pull_end=$(date +%s%3N)
         pull_time=$((pull_end - pull_start))
         total_pull_time=$((total_pull_time + pull_time))
@@ -42,7 +42,7 @@ measure_native_rust() {
 
         # 2. Container creation time
         create_start=$(date +%s%3N)
-        container_id=$(docker create --platform=linux/$arch sangeetakakati/rust-matrix-native:$arch)
+        container_id=$(docker create --platform=linux/$arch sangeetakakati/rust-matrix-native:latest)
         create_end=$(date +%s%3N)
         create_time=$((create_end - create_start))
         total_create_time=$((total_create_time + create_time))
@@ -58,7 +58,7 @@ measure_native_rust() {
 
         # 4. startup time (when the main function starts)
         startup_start_time=$(date +%s%3N)
-        main_start_time=$(docker run --platform=linux/$arch --rm sangeetakakati/rust-matrix-native:$arch 2>&1 | grep "Main function started at:" | awk '{print $5}')
+        main_start_time=$(docker run --platform=linux/$arch --rm sangeetakakati/rust-matrix-native:latest 2>&1 | grep "Main function started at:" | awk '{print $5}')
         startup_time=$((main_start_time - startup_start_time))
         total_startup_time=$((total_startup_time + startup_time))
         echo "Rust Trial $i (Pull, $arch): startup Time = $startup_time ms"
@@ -83,10 +83,10 @@ measure_native_tinygo() {
 
     for i in $(seq 1 $trials); do
         # 1. Cold start time from pull
-        docker rmi -f sangeetakakati/tinygo-matrix-native:$arch > /dev/null 2>&1
+        docker rmi -f sangeetakakati/tinygo-matrix-native:latest > /dev/null 2>&1
 
         pull_start=$(date +%s%3N)
-        docker pull sangeetakakati/tinygo-matrix-native:$arch > /dev/null 2>&1
+        docker pull sangeetakakati/tinygo-matrix-native:latest > /dev/null 2>&1
         pull_end=$(date +%s%3N)
         pull_time=$((pull_end - pull_start))
         total_pull_time=$((total_pull_time + pull_time))
@@ -94,7 +94,7 @@ measure_native_tinygo() {
 
         # 2. Container creation time
         create_start=$(date +%s%3N)
-        container_id=$(docker create --platform=linux/$arch sangeetakakati/tinygo-matrix-native:$arch)
+        container_id=$(docker create --platform=linux/$arch sangeetakakati/tinygo-matrix-native:latest)
         create_end=$(date +%s%3N)
         create_time=$((create_end - create_start))
         total_create_time=$((total_create_time + create_time))
@@ -110,7 +110,7 @@ measure_native_tinygo() {
 
         # 4. startup time (when the main function starts)
         startup_start_time=$(date +%s%3N)
-        main_start_time=$(docker run --platform=linux/$arch --rm sangeetakakati/tinygo-matrix-native:$arch 2>&1 | grep "Main function started at:" | awk '{print $5}')
+        main_start_time=$(docker run --platform=linux/$arch --rm sangeetakakati/tinygo-matrix-native:latest 2>&1 | grep "Main function started at:" | awk '{print $5}')
         startup_time=$((main_start_time - startup_start_time))
         total_startup_time=$((total_startup_time + startup_time))
         echo "TinyGo Trial $i (Pull, $arch): startup Time = $startup_time ms"

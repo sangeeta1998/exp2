@@ -1,0 +1,142 @@
+Measuring Native Rust for amd64...
+Script start time: 1726573404574 ms
+Unable to find image 'sangeetakakati/rust-matrix-native:amd64' locally
+amd64: Pulling from sangeetakakati/rust-matrix-native
+c24f06bc5ca3: Already exists
+Digest: sha256:71b3cdf5b519ced0966eab6b4ad784568f3b17397f205fed5fa9055636f6e56a
+Status: Downloaded newer image for sangeetakakati/rust-matrix-native:amd64
+Main function started at: 1726573407144 ms
+Sum of all elements: 251081.46280437073
+Time taken: 2.536228ms
+	Command being timed: "docker run --platform=linux/amd64 --rm sangeetakakati/rust-matrix-native:amd64"
+	User time (seconds): 0.00
+	System time (seconds): 0.01
+	Percent of CPU this job got: 0%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.67
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 26752
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 3
+	Minor (reclaiming a frame) page faults: 2693
+	Voluntary context switches: 529
+	Involuntary context switches: 52
+	Swaps: 0
+	File system inputs: 840
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Rust Trial 1 (Pull, amd64): Memory Usage = 26752 KB
+Average Rust memory usage (amd64): 26752 KB
+Measuring Native TinyGo for amd64...
+Script start time: 1726573407288 ms
+Unable to find image 'sangeetakakati/tinygo-matrix-native:amd64' locally
+amd64: Pulling from sangeetakakati/tinygo-matrix-native
+1cf730d8a2bc: Already exists
+Digest: sha256:11cf2d4109db94c6ff2ca9cfe5caa01fdd8d99ac670098085b0c2caabe408b3c
+Status: Downloaded newer image for sangeetakakati/tinygo-matrix-native:amd64
+Main function started at: 1726573409433 ms
+Sum of all elements: 250324.112494
+Time taken: 2.543762ms
+	Command being timed: "docker run --platform=linux/amd64 --rm sangeetakakati/tinygo-matrix-native:amd64"
+	User time (seconds): 0.00
+	System time (seconds): 0.00
+	Percent of CPU this job got: 0%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.24
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 26752
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2725
+	Voluntary context switches: 411
+	Involuntary context switches: 46
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+TinyGo Trial 1 (Pull, amd64): Memory Usage = 26752 KB
+Average TinyGo memory usage (amd64): 26752 KB
+Measuring Wasm Rust...
+Architecture: wasm
+Script start time: 1726573409567 ms
+Unable to find image 'sangeetakakati/rust-matrix-wasm:wasm' locally
+wasm: Pulling from sangeetakakati/rust-matrix-wasm
+967509061d20: Already exists
+Digest: sha256:0fbec839597fd64b27bf305dbfa1e2f25cb08c0ae4e248d12ffd317fb6b1f322
+Status: Downloaded newer image for sangeetakakati/rust-matrix-wasm:wasm
+Main function started at: 1726573413751 ms
+Sum of all elements: 252397.20513081516
+Time taken: 4.030281ms
+	Command being timed: "docker run --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/rust-matrix-wasm:wasm"
+	User time (seconds): 0.01
+	System time (seconds): 0.00
+	Percent of CPU this job got: 0%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.31
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 26624
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2699
+	Voluntary context switches: 488
+	Involuntary context switches: 39
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Rust Wasm Trial 1 (Pull, wasm): Memory Usage = 26624 KB
+Average Rust Wasm memory usage (wasm): 26624 KB
+Measuring Wasm TinyGo...
+Architecture: wasm
+Script start time: 1726573413922 ms
+Unable to find image 'sangeetakakati/tinygo-matrix-wasm:wasm' locally
+wasm: Pulling from sangeetakakati/tinygo-matrix-wasm
+7632ff58e0b3: Already exists
+Digest: sha256:5c4f073b3ab1a618ffd3ca820e00b147a95bcecae0477808357f6ec6cbc776b8
+Status: Downloaded newer image for sangeetakakati/tinygo-matrix-wasm:wasm
+Main function started at: 1726573423081 ms
+Sum of all elements: 253313.310801
+Time taken: 2.916116ms
+	Command being timed: "docker run --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:wasm"
+	User time (seconds): 0.00
+	System time (seconds): 0.01
+	Percent of CPU this job got: 0%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:09.29
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 26752
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2712
+	Voluntary context switches: 367
+	Involuntary context switches: 111
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+TinyGo Wasm Trial 1 (Pull, wasm): Memory Usage = 26752 KB
+Average TinyGo Wasm memory usage (wasm): 26752 KB

@@ -59,6 +59,19 @@ Try to remove the platform wasi/wasm32 from the build process as for some reason
 
 For some reason running a wasmtime module using ctr directly is not working, although it can run a spin app. But it works using docker, which in turn uses containerd.
 
+
+# Perf
+
+sudo perf record -g -- docker run --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:wasm
+
+perf record
+
+# strace
+
+strace -o output.txt -tt docker run --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:wasm
+
+strace -c docker run --cpus="1.0" --memory="4g" --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:wasm
+
 # Using ctr
 
 ```rust```

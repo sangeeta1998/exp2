@@ -11,3 +11,6 @@ rand = "0.8.4"
 name = "serverless_wasm"
 path = "src/main.rs"
 
+
+[profile.release]
+opt-level = 3

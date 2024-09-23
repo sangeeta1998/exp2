@@ -1,4 +1,4 @@
 FROM scratch
-COPY serverless_tinygo_optimized.wasm  /serverless_tinygo.wasm
-ENTRYPOINT ["/serverless_tinygo.wasm"]
+COPY  serverless_tinygo_optimized.cwasm  /serverless_tinygo.cwasm
+ENTRYPOINT ["/serverless_tinygo.cwasm"]
 

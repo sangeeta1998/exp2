@@ -8,7 +8,7 @@ COPY main.go .
 RUN tinygo build -opt=2 -o /app/serverless_tinygo main.go
 
 # Strip debugging information from the binary
-RUN strip /app/serverless_tinygo
+# RUN strip /app/serverless_tinygo
 
 # Runtime stage
 FROM scratch

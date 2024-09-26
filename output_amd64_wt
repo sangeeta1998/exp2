@@ -1,0 +1,34 @@
+Measuring Native Rust for amd64...
+Script start time: 1727358867063 ms
+Rust Trial 1 (Pull, amd64): Startup Time = 2448 ms
+Script start time: 1727358869641 ms
+Rust Trial 2 (Pull, amd64): Startup Time = 2319 ms
+Script start time: 1727358872103 ms
+Rust Trial 3 (Pull, amd64): Startup Time = 2326 ms
+Average Rust cold start time from pull (amd64): 2364 ms
+Measuring Native TinyGo for amd64...
+Script start time: 1727358874556 ms
+TinyGo Trial 1 (Pull, amd64): Startup Time = 2475 ms
+Script start time: 1727358877168 ms
+TinyGo Trial 2 (Pull, amd64): Startup Time = 2356 ms
+Script start time: 1727358879657 ms
+TinyGo Trial 3 (Pull, amd64): Startup Time = 2304 ms
+Average TinyGo cold start time from pull (amd64): 2378 ms
+Measuring Wasm Rust...
+Architecture: wasm
+Script start time: 1727358882095 ms
+Rust Wasm Trial 1 (Pull, wasm): Startup Time = 2412 ms
+Script start time: 1727358884626 ms
+Rust Wasm Trial 2 (Pull, wasm): Startup Time = 2349 ms
+Script start time: 1727358887097 ms
+Rust Wasm Trial 3 (Pull, wasm): Startup Time = 2401 ms
+Average Rust Wasm cold start time from pull (wasm): 2387 ms
+Measuring Wasm TinyGo...
+Architecture: wasm
+Script start time: 1727358889624 ms
+TinyGo Wasm Trial 1 (Pull, wasm): Startup Time = 2696 ms
+Script start time: 1727358892453 ms
+TinyGo Wasm Trial 2 (Pull, wasm): Startup Time = 2784 ms
+Script start time: 1727358895363 ms
+TinyGo Wasm Trial 3 (Pull, wasm): Startup Time = 2716 ms
+Average TinyGo Wasm cold start time from pull (wasm): 2732 ms

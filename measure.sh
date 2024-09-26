@@ -29,7 +29,7 @@ measure_native_rust() {
 
     for i in $(seq 1 $trials); do
         # Cold start time from pull
-        docker rmi sangeetakakati/rust-matrix-native:latest > /dev/null 2>&1
+        docker rmi -f sangeetakakati/rust-matrix-native:latest > /dev/null 2>&1
         script_start_time=$(date +%s%3N)
         echo "Script start time: ${script_start_time} ms"
         main_start_time=$(docker run --platform=linux/$arch --rm sangeetakakati/rust-matrix-native:latest 2>&1 | grep "Main function started at:" | awk '{print $5}')
@@ -53,7 +53,7 @@ measure_native_tinygo() {
 
     for i in $(seq 1 $trials); do
         # Cold start time from pull
-        docker rmi sangeetakakati/tinygo-matrix-native:latest > /dev/null 2>&1
+        docker rmi -f sangeetakakati/tinygo-matrix-native:latest > /dev/null 2>&1
         script_start_time=$(date +%s%3N)
         echo "Script start time: ${script_start_time} ms"
         main_start_time=$(docker run --platform=linux/$arch --rm sangeetakakati/tinygo-matrix-native:latest 2>&1 | grep "Main function started at:" | awk '{print $5}')
@@ -78,7 +78,7 @@ measure_wasm_rust() {
 
         for i in $(seq 1 $trials); do
             # Cold start time from pull
-            docker rmi sangeetakakati/rust-matrix-wasm:wasm > /dev/null 2>&1
+            docker rmi -f sangeetakakati/rust-matrix-wasm:wasm > /dev/null 2>&1
             script_start_time=$(date +%s%3N)
             echo "Script start time: ${script_start_time} ms"
             main_start_time=$(docker run --runtime=io.containerd.wasmtime.v2 --platform=wasm --rm sangeetakakati/rust-matrix-wasm:wasm 2>&1 | grep "Main function started at:" | awk '{print $5}')
@@ -105,7 +105,7 @@ measure_wasm_tinygo() {
 
         for i in $(seq 1 $trials); do
             # Cold start time from pull
-            docker rmi sangeetakakati/tinygo-matrix-wasm:wasm > /dev/null 2>&1
+            docker rmi -f sangeetakakati/tinygo-matrix-wasm:wasm > /dev/null 2>&1
             script_start_time=$(date +%s%3N)
             echo "Script start time: ${script_start_time} ms"
             main_start_time=$(docker run --runtime=io.containerd.wasmtime.v2 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:wasm 2>&1 | grep "Main function started at:" | awk '{print $5}')

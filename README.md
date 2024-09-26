@@ -62,9 +62,14 @@ For some reason running a wasmtime module using ctr directly is not working, alt
 
 # Perf
 
-sudo perf record -g -- docker run --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:wasm
+sudo perf record -g -o perf_wasmtime.data -- docker run --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:wasm
 
-perf record
+sudo perf record -g -o perf_wasmedge.data -- docker run --runtime=io.containerd.wasmedge.v1 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:wasm
+
+sudo perf report -i perf_wasmtime.data
+
+sudo perf report -i perf_wasmedge.data
+
 
 # strace
 

@@ -86,7 +86,7 @@ measure_wasm_rust() {
             echo "Script start time: ${script_start_time} ms"
 
             # Measure time and memory usage with /usr/bin/time
-            /usr/bin/time -v docker run --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/rust-matrix-wasm:$arch 2>&1 | tee output_wasm_rust.log
+            /usr/bin/time -v docker run --runtime=io.containerd.wasmtime.v2 --platform=wasm --rm sangeetakakati/rust-matrix-wasm:$arch 2>&1 | tee output_wasm_rust.log
 
             # Extract the memory usage (Maximum resident set size)
             memory_usage=$(grep "Maximum resident set size" output_wasm_rust.log | awk '{print $6}')
@@ -115,7 +115,7 @@ measure_wasm_tinygo() {
             echo "Script start time: ${script_start_time} ms"
 
             # Measure time and memory usage with /usr/bin/time
-            /usr/bin/time -v docker run --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:$arch 2>&1 | tee output_wasm_tinygo.log
+            /usr/bin/time -v docker run --runtime=io.containerd.wasmtime.v2 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:$arch 2>&1 | tee output_wasm_tinygo.log
 
             # Extract the memory usage (Maximum resident set size)
             memory_usage=$(grep "Maximum resident set size" output_wasm_tinygo.log | awk '{print $6}')

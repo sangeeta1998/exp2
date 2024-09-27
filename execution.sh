@@ -30,7 +30,7 @@ measure_execution_time() {
     echo "--------------------------------------------"
 
     # Remove the image to ensure cold start
-    docker rmi -f $image
+    docker rmi $image
 
     # Measure execution time
     if [ -z "$runtime" ]; then

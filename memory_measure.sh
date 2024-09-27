@@ -26,7 +26,7 @@ measure_native_rust() {
 
     for i in $(seq 1 $trials); do
         # Cold start time from pull
-        docker rmi -f sangeetakakati/rust-matrix-native:latest > /dev/null 2>&1
+        docker rmi sangeetakakati/rust-matrix-native:latest > /dev/null 2>&1
         script_start_time=$(date +%s%3N)
         echo "Script start time: ${script_start_time} ms"
 
@@ -53,7 +53,7 @@ measure_native_tinygo() {
 
     for i in $(seq 1 $trials); do
         # Cold start time from pull
-        docker rmi -f sangeetakakati/tinygo-matrix-native:latest > /dev/null 2>&1
+        docker rmi sangeetakakati/tinygo-matrix-native:latest > /dev/null 2>&1
         script_start_time=$(date +%s%3N)
         echo "Script start time: ${script_start_time} ms"
 
@@ -81,7 +81,7 @@ measure_wasm_rust() {
 
         for i in $(seq 1 $trials); do
             # Cold start time from pull
-            docker rmi -f sangeetakakati/rust-matrix-wasm:$arch > /dev/null 2>&1
+            docker rmi sangeetakakati/rust-matrix-wasm:$arch > /dev/null 2>&1
             script_start_time=$(date +%s%3N)
             echo "Script start time: ${script_start_time} ms"
 
@@ -110,7 +110,7 @@ measure_wasm_tinygo() {
 
         for i in $(seq 1 $trials); do
             # Cold start time from pull
-            docker rmi -f sangeetakakati/tinygo-matrix-wasm:$arch > /dev/null 2>&1
+            docker rmi sangeetakakati/tinygo-matrix-wasm:$arch > /dev/null 2>&1
             script_start_time=$(date +%s%3N)
             echo "Script start time: ${script_start_time} ms"
 

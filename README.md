@@ -14,40 +14,29 @@ Measure_wasm function performs similar steps but uses a different Docker image a
 
 ```wasm-opt -O3 -o serverless_tinygo_optimized.wasm serverless_tinygo.wasm```
 
+# For multi architectures:
 
-# For separate tags:
+```docker buildx build --platform linux/amd64,linux/arm64 --output "type=image,push=true" --tag sangeetakakati/rust-matrix-native:arch --builder default .```
 
-```rust-matrix-native```
+```docker buildx build --platform wasi/wasm,linux/amd64,linux/arm64  --output "type=image,push=true" --tag sangeetakakati/rust-matrix-wasm:arch --builder default .```
 
-docker buildx build --platform linux/amd64 --tag sangeetakakati/rust-matrix-native:amd64 --output "type=image,push=true" --builder default .
+```docker run --platform=linux/arm64 --rm sangeetakakati/rust-matrix-native:latest```
 
-docker buildx build --platform linux/arm64 --tag sangeetakakati/rust-matrix-native:arm64 --output "type=image,push=true" --builder default .
-
-docker run --platform=linux/amd64 --rm sangeetakakati/rust-matrix-native:amd64
-
-docker run --platform=linux/arm64 --rm sangeetakakati/rust-matrix-native:arm64
+Similarly, using amd64
 
 ```rust-matrix-wasm```
 
 docker buildx build --platform wasm --tag sangeetakakati/rust-matrix-wasm:wasm --output "type=image,push=true" --builder default .
 
-docker run --runtime=io.containerd.wasmtime.v1   --platform=wasm   sangeetakakati/rust-matrix-wasm:wasm
+docker run --runtime=io.containerd.wasmtime.v2   --platform=wasm   sangeetakakati/rust-matrix-wasm:wasm
 
 ```tinygo-matrix-wasm```
 
 docker buildx build --platform wasm --tag sangeetakakati/tinygo-matrix-wasm:wasm --output "type=image,push=true" --builder default .
 
-docker run --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:wasm
+docker run --runtime=io.containerd.wasmtime.v2 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:wasm
 
-```tinygo-matrix-native```
 
-docker buildx build --platform linux/amd64 -t sangeetakakati/tinygo-matrix-native:amd64 --push .
-
-docker run --rm sangeetakakati/tinygo-matrix-native:amd64
-
-docker buildx build --platform linux/arm64 -t sangeetakakati/tinygo-matrix-native:arm64 --push .
-
-docker run --rm sangeetakakati/tinygo-matrix-native:arm64
 
 #For errors, try using platform wasm instead of wasi/wasm:
 ```docker buildx build --platform wasm -t sangeetakakati/tinygo-matrix-wasm:trial --output "type=image,push=true" --builder default .```
@@ -60,22 +49,6 @@ Try to remove the platform wasi/wasm32 from the build process as for some reason
 For some reason running a wasmtime module using ctr directly is not working, although it can run a spin app. But it works using docker, which in turn uses containerd.
 
 
-# Perf
-
-sudo perf record -g -o perf_wasmtime.data -- docker run --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:wasm
-
-sudo perf record -g -o perf_wasmedge.data -- docker run --runtime=io.containerd.wasmedge.v1 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:wasm
-
-sudo perf report -i perf_wasmtime.data
-
-sudo perf report -i perf_wasmedge.data
-
-
-# strace
-
-strace -o output.txt -tt docker run --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:wasm
-
-strace -c docker run --cpus="1.0" --memory="4g" --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:wasm
 
 # Using ctr
 
@@ -89,7 +62,7 @@ Similarly for arm64
 
 sudo ctr images pull --platform wasi/wasm docker.io/sangeetakakati/rust-matrix-wasm:wasm
 
-sudo ctr run --rm --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm docker.io/sangeetakakati/rust-matrix-wasm:wasm mycontainer
+sudo ctr run --rm --runtime=io.containerd.wasmtime.v2 --platform=wasi/wasm docker.io/sangeetakakati/rust-matrix-wasm:wasm mycontainer
 
 ```tinygo```
 
@@ -101,7 +74,7 @@ Similarly for arm64
 
 sudo ctr images pull --platform wasi/wasm docker.io/sangeetakakati/tinygo-matrix-wasm:wasm
 
-sudo ctr run --rm --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm docker.io/sangeetakakati/tinygo-matrix-wasm:wasm mycontainer
+sudo ctr run --rm --runtime=io.containerd.wasmtime.v2 --platform=wasi/wasm docker.io/sangeetakakati/tinygo-matrix-wasm:wasm mycontainer
 
 
 # Optimising wasm
@@ -114,11 +87,7 @@ List the sizes now:
 
 ```ls -lh serverless_wasm.wasm serverless_wasm_optimized.wasm```
 
-# For multi architectures:
 
-```docker buildx build --platform linux/amd64,linux/arm64 --output "type=image,push=true" --tag sangeetakakati/rust-matrix-native:arch --builder default .```
-
-```docker buildx build --platform wasi/wasm,linux/amd64,linux/arm64  --output "type=image,push=true" --tag sangeetakakati/rust-matrix-wasm:arch --builder default .```
 
 
 # Build for all archs 
@@ -136,7 +105,3 @@ docker buildx build \
   --builder default .
 
 
-
-
-# Verify the manifest list
-docker manifest inspect sangeetakakati/rust-matrix-wasm:arch

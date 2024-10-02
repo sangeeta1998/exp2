@@ -16,9 +16,9 @@ Measure_wasm function performs similar steps but uses a different Docker image a
 
 # For multi architectures:
 
-```docker buildx build --platform linux/amd64,linux/arm64 --output "type=image,push=true" --tag sangeetakakati/rust-matrix-native:arch --builder default .```
+```docker buildx build --platform linux/amd64,linux/arm64 --output "type=image,push=true" --tag sangeetakakati/rust-matrix-native:latest --builder default .```
 
-```docker buildx build --platform wasi/wasm,linux/amd64,linux/arm64  --output "type=image,push=true" --tag sangeetakakati/rust-matrix-wasm:arch --builder default .```
+```docker buildx build --platform linux/amd64,linux/arm64  --output "type=image,push=true" --tag sangeetakakati/tinygo-matrix-native:latest --builder default .```
 
 ```docker run --platform=linux/arm64 --rm sangeetakakati/rust-matrix-native:latest```
 

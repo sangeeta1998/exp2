@@ -54,16 +54,17 @@ arch=$(detect_architecture)
 # Define image names with appropriate architecture tags
 rust_native_image="sangeetakakati/rust-matrix-native:latest"
 tinygo_native_image="sangeetakakati/tinygo-matrix-native:latest"
+cpp_native_image="sangeetakakati/cpp-matrix-native:latest"
+cpp_wasm_image="sangeetakakati/cpp-matrix-wasm:wasm"
 rust_wasm_image="sangeetakakati/rust-matrix-wasm:wasm"
 tinygo_wasm_image="sangeetakakati/tinygo-matrix-wasm:wasm"
 
 # Measure execution time for each runtime
 measure_execution_time "$rust_native_image" "" "$arch"
 measure_execution_time "$rust_wasm_image" "io.containerd.wasmtime.v2" "wasm"
-#measure_execution_time "$rust_wasm_image" "io.containerd.wasmedge.v1" "wasm"
-#measure_execution_time "$rust_wasm_image" "io.containerd.wasmer.v1" "wasm"
 
 measure_execution_time "$tinygo_native_image" "" "$arch"
 measure_execution_time "$tinygo_wasm_image" "io.containerd.wasmtime.v2" "wasm"
-#measure_execution_time "$tinygo_wasm_image" "io.containerd.wasmedge.v1" "wasm"
-#measure_execution_time "$tinygo_wasm_image" "io.containerd.wasmer.v1" "wasm"
+
+measure_execution_time "$cpp_native_image" "" "$arch"
+measure_execution_time "$cpp_wasm_image" "io.containerd.wasmtime.v2" "wasm"

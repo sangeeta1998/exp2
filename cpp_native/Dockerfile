@@ -1,6 +1,9 @@
 # Build Stage
-FROM gcc:latest AS builder
+FROM alpine:latest AS builder
 WORKDIR /usr/src/app
+
+# Install necessary packages
+RUN apk add --no-cache g++ make
 
 COPY matrix.cpp ./matrix.cpp
 RUN g++ matrix.cpp -o matrix -static -O2
@@ -9,4 +12,3 @@ RUN g++ matrix.cpp -o matrix -static -O2
 FROM scratch
 COPY --from=builder /usr/src/app/matrix /matrix
 CMD ["/matrix"]
-

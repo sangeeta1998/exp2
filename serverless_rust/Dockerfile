@@ -1,22 +1,14 @@
-# First, build stage
-FROM rust:alpine as builder
+# Build Stage
+FROM rust:alpine AS builder
 WORKDIR /usr/src/myapp
-
-# Installing necessary build dependencies
-RUN apk add --no-cache musl-dev gcc upx binutils
-
+RUN apk add --no-cache musl-dev gcc
 COPY Cargo.toml Cargo.lock ./
 RUN cargo fetch
 COPY src/ ./src/
 RUN cargo build --release
 
-# Strip the binary
-#RUN strip /usr/src/myapp/target/release/serverless_rust
-
-
-# Runtime stage
+# Runtime Stage
 FROM scratch
 COPY --from=builder /usr/src/myapp/target/release/serverless_rust /serverless_rust
 
 CMD ["/serverless_rust"]
-

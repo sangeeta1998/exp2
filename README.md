@@ -36,7 +36,13 @@ docker buildx build --platform wasm --tag sangeetakakati/tinygo-matrix-wasm:wasm
 
 docker run --runtime=io.containerd.wasmtime.v2 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:wasm
 
+```cpp-matrix-wasm```
 
+clang++ --target=wasm32-wasi -fno-exceptions -o matrix.wasm matrix.cpp
+
+docker buildx build --platform wasm --tag sangeetakakati/cpp-matrix-wasm:wasm --output "type=image,push=true" --builder default .
+
+docker run --runtime=io.containerd.wasmtime.v2 --platform=wasm --rm sangeetakakati/cpp-matrix-wasm:wasm
 
 #For errors, try using platform wasm instead of wasi/wasm:
 ```docker buildx build --platform wasm -t sangeetakakati/tinygo-matrix-wasm:trial --output "type=image,push=true" --builder default .```

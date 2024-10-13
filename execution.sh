@@ -36,10 +36,10 @@ measure_execution_time() {
     {
         if [ -z "$runtime" ]; then
             # For native containers
-            time docker run --name $container_name --rm $image 
+            /usr/bin/time -v docker run --name $container_name --rm $image 
         else
             # For Wasm containers with specific runtime
-            time docker run --runtime=$runtime --platform=$platform --name $container_name --rm $image
+            /usr/bin/time -v docker run --runtime=$runtime --platform=$platform --name $container_name --rm $image
         fi
     } 2>&1 | tee -a execution_time.log
 

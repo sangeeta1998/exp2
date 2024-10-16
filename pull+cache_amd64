@@ -12,25 +12,71 @@ a7ed2b91c90e: Pull complete
 Digest: sha256:0a38f0b960b2040090aeaf858d087b7fae86c658fa542a31eef650e1401ac341
 Status: Downloaded newer image for sangeetakakati/rust-matrix-native:latest
 docker.io/sangeetakakati/rust-matrix-native:latest
-Image Pull Time: 2033 ms
+Image Pull Time: 2409 ms
 Starting container...
-Main function started at: 1728834926998 ms
-Sum of all elements: 251750.8605326283
-Time taken: 2.535552ms
-	Command being timed: "docker run --name test_container_1728834924716002386 --rm sangeetakakati/rust-matrix-native:latest"
-	User time (seconds): 0.00
+Main function started at: 1728993930558 ms
+Sum of all elements: 250181.49089387385
+Time taken: 2.55911ms
+	Command being timed: "docker run --name test_container_1728993928132721919 --rm sangeetakakati/rust-matrix-native:latest"
+	User time (seconds): 0.01
 	System time (seconds): 0.01
-	Percent of CPU this job got: 6%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.35
+	Percent of CPU this job got: 7%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.37
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 23808
+	Maximum resident set size (kbytes): 25344
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 4
+	Minor (reclaiming a frame) page faults: 2997
+	Voluntary context switches: 786
+	Involuntary context switches: 1
+	Swaps: 0
+	File system inputs: 664
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Container Execution Time (Wall Clock): 2540 ms
+--------------------------------------------
+Execution for sangeetakakati/rust-matrix-native:latest completed
+Total Execution Time: 4700 ms
+
+============================================
+Running sangeetakakati/rust-matrix-wasm:wasm with io.containerd.wasmtime.v2 (Fresh Pull: true)
+--------------------------------------------
+Removing image sangeetakakati/rust-matrix-wasm:wasm to force fresh pull...
+wasm: Pulling from sangeetakakati/rust-matrix-wasm
+88a498aee6fb: Pulling fs layer
+88a498aee6fb: Verifying Checksum
+88a498aee6fb: Download complete
+88a498aee6fb: Pull complete
+Digest: sha256:795f9a4d2be825b8c96c6c4863ea345b04685df4dbaf68893c42a382f9ccda05
+Status: Downloaded newer image for sangeetakakati/rust-matrix-wasm:wasm
+docker.io/sangeetakakati/rust-matrix-wasm:wasm
+Image Pull Time: 2160 ms
+Starting container...
+Running Wasm container with runtime: io.containerd.wasmtime.v2
+Main function started at: 1728993933632 ms
+Sum of all elements: 252557.80638721384
+Time taken: 2.659379ms
+	Command being timed: "docker run --runtime=io.containerd.wasmtime.v2 --platform=wasm --name test_container_1728993930694046325 --rm sangeetakakati/rust-matrix-wasm:wasm"
+	User time (seconds): 0.01
+	System time (seconds): 0.01
+	Percent of CPU this job got: 4%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.64
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24576
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 3001
-	Voluntary context switches: 776
+	Minor (reclaiming a frame) page faults: 3000
+	Voluntary context switches: 767
 	Involuntary context switches: 0
 	Swaps: 0
 	File system inputs: 0
@@ -40,33 +86,77 @@ Time taken: 2.535552ms
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
-Container Execution Time (Wall Clock): 2390 ms
+Container Execution Time (Wall Clock): 3062 ms
 --------------------------------------------
-Execution for sangeetakakati/rust-matrix-native:latest completed
-Total Execution Time: 4423 ms
+Execution for sangeetakakati/rust-matrix-wasm:wasm completed
+Total Execution Time: 5471 ms
 
 ============================================
-Running sangeetakakati/rust-matrix-wasm:wasm with io.containerd.wasmtime.v2 (Fresh Pull: true)
+Running sangeetakakati/tinygo-matrix-native:latest with  (Fresh Pull: true)
 --------------------------------------------
-Removing image sangeetakakati/rust-matrix-wasm:wasm to force fresh pull...
-wasm: Pulling from sangeetakakati/rust-matrix-wasm
-88a498aee6fb: Pulling fs layer
-88a498aee6fb: Download complete
-88a498aee6fb: Pull complete
-Digest: sha256:795f9a4d2be825b8c96c6c4863ea345b04685df4dbaf68893c42a382f9ccda05
-Status: Downloaded newer image for sangeetakakati/rust-matrix-wasm:wasm
-docker.io/sangeetakakati/rust-matrix-wasm:wasm
-Image Pull Time: 2298 ms
+Removing image sangeetakakati/tinygo-matrix-native:latest to force fresh pull...
+latest: Pulling from sangeetakakati/tinygo-matrix-native
+f0387f9b6588: Pulling fs layer
+f0387f9b6588: Download complete
+f0387f9b6588: Pull complete
+Digest: sha256:a83fe4d354a7a4b78ca36ba198da1886f13efb5f25a32e3e85014e35b9dbc552
+Status: Downloaded newer image for sangeetakakati/tinygo-matrix-native:latest
+docker.io/sangeetakakati/tinygo-matrix-native:latest
+Image Pull Time: 2355 ms
+Starting container...
+Main function started at: 1728993936363 ms
+Sum of all elements: 249028.099145
+Time taken: 2.56573ms
+	Command being timed: "docker run --name test_container_1728993933773280595 --rm sangeetakakati/tinygo-matrix-native:latest"
+	User time (seconds): 0.01
+	System time (seconds): 0.01
+	Percent of CPU this job got: 7%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.34
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24576
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2983
+	Voluntary context switches: 770
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Container Execution Time (Wall Clock): 2706 ms
+--------------------------------------------
+Execution for sangeetakakati/tinygo-matrix-native:latest completed
+Total Execution Time: 5061 ms
+
+============================================
+Running sangeetakakati/tinygo-matrix-wasm:wasm with io.containerd.wasmtime.v2 (Fresh Pull: true)
+--------------------------------------------
+Removing image sangeetakakati/tinygo-matrix-wasm:wasm to force fresh pull...
+wasm: Pulling from sangeetakakati/tinygo-matrix-wasm
+335ab9c63246: Pulling fs layer
+335ab9c63246: Download complete
+335ab9c63246: Pull complete
+Digest: sha256:ec2d1157769da07991163ea3e024eb0a0d9f72d576a9ca926ce00d9ba7ab8cbf
+Status: Downloaded newer image for sangeetakakati/tinygo-matrix-wasm:wasm
+docker.io/sangeetakakati/tinygo-matrix-wasm:wasm
+Image Pull Time: 2151 ms
 Starting container...
 Running Wasm container with runtime: io.containerd.wasmtime.v2
-Main function started at: 1728834929743 ms
-Sum of all elements: 251930.214623724
-Time taken: 2.652043ms
-	Command being timed: "docker run --runtime=io.containerd.wasmtime.v2 --platform=wasm --name test_container_1728834927124022486 --rm sangeetakakati/rust-matrix-wasm:wasm"
-	User time (seconds): 0.02
-	System time (seconds): 0.00
-	Percent of CPU this job got: 6%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.43
+Main function started at: 1728993939042 ms
+Sum of all elements: 249456.901808
+Time taken: 3.021116ms
+	Command being timed: "docker run --runtime=io.containerd.wasmtime.v2 --platform=wasm --name test_container_1728993936495544013 --rm sangeetakakati/tinygo-matrix-wasm:wasm"
+	User time (seconds): 0.01
+	System time (seconds): 0.01
+	Percent of CPU this job got: 5%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.51
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
@@ -74,8 +164,8 @@ Time taken: 2.652043ms
 	Maximum resident set size (kbytes): 25344
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 3003
-	Voluntary context switches: 761
+	Minor (reclaiming a frame) page faults: 3208
+	Voluntary context switches: 831
 	Involuntary context switches: 1
 	Swaps: 0
 	File system inputs: 0
@@ -85,101 +175,10 @@ Time taken: 2.652043ms
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
-Container Execution Time (Wall Clock): 2741 ms
---------------------------------------------
-Execution for sangeetakakati/rust-matrix-wasm:wasm completed
-Total Execution Time: 5039 ms
-
-============================================
-Running sangeetakakati/tinygo-matrix-native:latest with  (Fresh Pull: true)
---------------------------------------------
-Removing image sangeetakakati/tinygo-matrix-native:latest to force fresh pull...
-latest: Pulling from sangeetakakati/tinygo-matrix-native
-f0387f9b6588: Pulling fs layer
-f0387f9b6588: Verifying Checksum
-f0387f9b6588: Download complete
-f0387f9b6588: Pull complete
-Digest: sha256:a83fe4d354a7a4b78ca36ba198da1886f13efb5f25a32e3e85014e35b9dbc552
-Status: Downloaded newer image for sangeetakakati/tinygo-matrix-native:latest
-docker.io/sangeetakakati/tinygo-matrix-native:latest
-Image Pull Time: 1977 ms
-Starting container...
-Main function started at: 1728834932101 ms
-Sum of all elements: 251081.047332
-Time taken: 2.619449ms
-	Command being timed: "docker run --name test_container_1728834929882425660 --rm sangeetakakati/tinygo-matrix-native:latest"
-	User time (seconds): 0.01
-	System time (seconds): 0.01
-	Percent of CPU this job got: 5%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.36
-	Average shared text size (kbytes): 0
-	Average unshared data size (kbytes): 0
-	Average stack size (kbytes): 0
-	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 25344
-	Average resident set size (kbytes): 0
-	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 3045
-	Voluntary context switches: 784
-	Involuntary context switches: 0
-	Swaps: 0
-	File system inputs: 0
-	File system outputs: 0
-	Socket messages sent: 0
-	Socket messages received: 0
-	Signals delivered: 0
-	Page size (bytes): 4096
-	Exit status: 0
-Container Execution Time (Wall Clock): 2349 ms
---------------------------------------------
-Execution for sangeetakakati/tinygo-matrix-native:latest completed
-Total Execution Time: 4326 ms
-
-============================================
-Running sangeetakakati/tinygo-matrix-wasm:wasm with io.containerd.wasmtime.v2 (Fresh Pull: true)
---------------------------------------------
-Removing image sangeetakakati/tinygo-matrix-wasm:wasm to force fresh pull...
-wasm: Pulling from sangeetakakati/tinygo-matrix-wasm
-335ab9c63246: Pulling fs layer
-335ab9c63246: Verifying Checksum
-335ab9c63246: Download complete
-335ab9c63246: Pull complete
-Digest: sha256:ec2d1157769da07991163ea3e024eb0a0d9f72d576a9ca926ce00d9ba7ab8cbf
-Status: Downloaded newer image for sangeetakakati/tinygo-matrix-wasm:wasm
-docker.io/sangeetakakati/tinygo-matrix-wasm:wasm
-Image Pull Time: 1974 ms
-Starting container...
-Running Wasm container with runtime: io.containerd.wasmtime.v2
-Main function started at: 1728834934595 ms
-Sum of all elements: 248349.140453
-Time taken: 3.013348ms
-	Command being timed: "docker run --runtime=io.containerd.wasmtime.v2 --platform=wasm --name test_container_1728834932249209765 --rm sangeetakakati/tinygo-matrix-wasm:wasm"
-	User time (seconds): 0.02
-	System time (seconds): 0.00
-	Percent of CPU this job got: 5%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.48
-	Average shared text size (kbytes): 0
-	Average unshared data size (kbytes): 0
-	Average stack size (kbytes): 0
-	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 25344
-	Average resident set size (kbytes): 0
-	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 3256
-	Voluntary context switches: 824
-	Involuntary context switches: 0
-	Swaps: 0
-	File system inputs: 0
-	File system outputs: 0
-	Socket messages sent: 0
-	Socket messages received: 0
-	Signals delivered: 0
-	Page size (bytes): 4096
-	Exit status: 0
-Container Execution Time (Wall Clock): 2463 ms
+Container Execution Time (Wall Clock): 2674 ms
 --------------------------------------------
 Execution for sangeetakakati/tinygo-matrix-wasm:wasm completed
-Total Execution Time: 4437 ms
+Total Execution Time: 4825 ms
 
 ============================================
 Running sangeetakakati/cpp-matrix-native:latest with  (Fresh Pull: true)
@@ -193,25 +192,25 @@ ad760c1ba655: Pull complete
 Digest: sha256:bf158c2fadc722a33f9f75075e9c29394d6cc723cea6df01c071264152368fc6
 Status: Downloaded newer image for sangeetakakati/cpp-matrix-native:latest
 docker.io/sangeetakakati/cpp-matrix-native:latest
-Image Pull Time: 2021 ms
+Image Pull Time: 2119 ms
 Starting container...
-Main function started at: 1728834936994 ms
-Sum of all elements: 250759
-Time taken: 0.00106482 seconds
-	Command being timed: "docker run --name test_container_1728834934729059220 --rm sangeetakakati/cpp-matrix-native:latest"
+Main function started at: 1728993941539 ms
+Sum of all elements: 246303
+Time taken: 0.00107086 seconds
+	Command being timed: "docker run --name test_container_1728993939184926966 --rm sangeetakakati/cpp-matrix-native:latest"
 	User time (seconds): 0.01
 	System time (seconds): 0.01
-	Percent of CPU this job got: 7%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.35
+	Percent of CPU this job got: 8%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.34
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 25344
+	Maximum resident set size (kbytes): 23808
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 3021
-	Voluntary context switches: 770
+	Minor (reclaiming a frame) page faults: 3265
+	Voluntary context switches: 806
 	Involuntary context switches: 1
 	Swaps: 0
 	File system inputs: 0
@@ -221,10 +220,10 @@ Time taken: 0.00106482 seconds
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
-Container Execution Time (Wall Clock): 2375 ms
+Container Execution Time (Wall Clock): 2471 ms
 --------------------------------------------
 Execution for sangeetakakati/cpp-matrix-native:latest completed
-Total Execution Time: 4396 ms
+Total Execution Time: 4590 ms
 
 ============================================
 Running sangeetakakati/cpp-matrix-wasm:wasm with io.containerd.wasmtime.v2 (Fresh Pull: true)
@@ -237,27 +236,27 @@ wasm: Pulling from sangeetakakati/cpp-matrix-wasm
 Digest: sha256:9a65f736fee7a0a55eb9be60b1512c036a7feec6603406fa259acb4a1b4c97d1
 Status: Downloaded newer image for sangeetakakati/cpp-matrix-wasm:wasm
 docker.io/sangeetakakati/cpp-matrix-wasm:wasm
-Image Pull Time: 1960 ms
+Image Pull Time: 2129 ms
 Starting container...
 Running Wasm container with runtime: io.containerd.wasmtime.v2
-Main function started at: 1728834939413 ms
+Main function started at: 1728993944153 ms
 Sum of all elements: 61980.3
-Time taken: 0.00112178 seconds
-	Command being timed: "docker run --runtime=io.containerd.wasmtime.v2 --platform=wasm --name test_container_1728834937120337393 --rm sangeetakakati/cpp-matrix-wasm:wasm"
+Time taken: 0.0011163 seconds
+	Command being timed: "docker run --runtime=io.containerd.wasmtime.v2 --platform=wasm --name test_container_1728993941672501895 --rm sangeetakakati/cpp-matrix-wasm:wasm"
 	User time (seconds): 0.01
 	System time (seconds): 0.01
-	Percent of CPU this job got: 6%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.44
+	Percent of CPU this job got: 5%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.47
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 26112
+	Maximum resident set size (kbytes): 24576
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 3033
-	Voluntary context switches: 777
-	Involuntary context switches: 0
+	Minor (reclaiming a frame) page faults: 3012
+	Voluntary context switches: 765
+	Involuntary context switches: 1
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 0
@@ -266,10 +265,10 @@ Time taken: 0.00112178 seconds
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
-Container Execution Time (Wall Clock): 2409 ms
+Container Execution Time (Wall Clock): 2604 ms
 --------------------------------------------
 Execution for sangeetakakati/cpp-matrix-wasm:wasm completed
-Total Execution Time: 4369 ms
+Total Execution Time: 4733 ms
 
 Testing with cached images:
 Using cached image for sangeetakakati/rust-matrix-native:latest
@@ -281,67 +280,25 @@ latest: Pulling from sangeetakakati/rust-matrix-native
 Digest: sha256:0a38f0b960b2040090aeaf858d087b7fae86c658fa542a31eef650e1401ac341
 Status: Image is up to date for sangeetakakati/rust-matrix-native:latest
 docker.io/sangeetakakati/rust-matrix-native:latest
-Image Pull Time: 956 ms
+Image Pull Time: 957 ms
 Starting container...
-Main function started at: 1728834940768 ms
-Sum of all elements: 250063.7452057908
-Time taken: 2.522782ms
-	Command being timed: "docker run --name test_container_1728834939564424972 --rm sangeetakakati/rust-matrix-native:latest"
+Main function started at: 1728993945499 ms
+Sum of all elements: 248567.35723581826
+Time taken: 2.530316ms
+	Command being timed: "docker run --name test_container_1728993944311093758 --rm sangeetakakati/rust-matrix-native:latest"
 	User time (seconds): 0.01
-	System time (seconds): 0.01
+	System time (seconds): 0.00
 	Percent of CPU this job got: 7%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.36
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.35
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 24576
+	Maximum resident set size (kbytes): 23808
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 3244
-	Voluntary context switches: 815
-	Involuntary context switches: 0
-	Swaps: 0
-	File system inputs: 0
-	File system outputs: 0
-	Socket messages sent: 0
-	Socket messages received: 0
-	Signals delivered: 0
-	Page size (bytes): 4096
-	Exit status: 0
-Container Execution Time (Wall Clock): 1320 ms
---------------------------------------------
-Execution for sangeetakakati/rust-matrix-native:latest completed
-Total Execution Time: 2276 ms
-Using cached image for sangeetakakati/rust-matrix-wasm:wasm
-
-============================================
-Running sangeetakakati/rust-matrix-wasm:wasm with io.containerd.wasmtime.v2 (Fresh Pull: false)
---------------------------------------------
-wasm: Pulling from sangeetakakati/rust-matrix-wasm
-Digest: sha256:795f9a4d2be825b8c96c6c4863ea345b04685df4dbaf68893c42a382f9ccda05
-Status: Image is up to date for sangeetakakati/rust-matrix-wasm:wasm
-docker.io/sangeetakakati/rust-matrix-wasm:wasm
-Image Pull Time: 1077 ms
-Starting container...
-Running Wasm container with runtime: io.containerd.wasmtime.v2
-Main function started at: 1728834942286 ms
-Sum of all elements: 248820.70512344936
-Time taken: 2.652989ms
-	Command being timed: "docker run --runtime=io.containerd.wasmtime.v2 --platform=wasm --name test_container_1728834940903460413 --rm sangeetakakati/rust-matrix-wasm:wasm"
-	User time (seconds): 0.01
-	System time (seconds): 0.01
-	Percent of CPU this job got: 6%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.42
-	Average shared text size (kbytes): 0
-	Average unshared data size (kbytes): 0
-	Average stack size (kbytes): 0
-	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 24576
-	Average resident set size (kbytes): 0
-	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 2994
-	Voluntary context switches: 830
+	Minor (reclaiming a frame) page faults: 2962
+	Voluntary context switches: 748
 	Involuntary context switches: 1
 	Swaps: 0
 	File system inputs: 0
@@ -351,10 +308,52 @@ Time taken: 2.652989ms
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
-Container Execution Time (Wall Clock): 1507 ms
+Container Execution Time (Wall Clock): 1312 ms
+--------------------------------------------
+Execution for sangeetakakati/rust-matrix-native:latest completed
+Total Execution Time: 2269 ms
+Using cached image for sangeetakakati/rust-matrix-wasm:wasm
+
+============================================
+Running sangeetakakati/rust-matrix-wasm:wasm with io.containerd.wasmtime.v2 (Fresh Pull: false)
+--------------------------------------------
+wasm: Pulling from sangeetakakati/rust-matrix-wasm
+Digest: sha256:795f9a4d2be825b8c96c6c4863ea345b04685df4dbaf68893c42a382f9ccda05
+Status: Image is up to date for sangeetakakati/rust-matrix-wasm:wasm
+docker.io/sangeetakakati/rust-matrix-wasm:wasm
+Image Pull Time: 948 ms
+Starting container...
+Running Wasm container with runtime: io.containerd.wasmtime.v2
+Main function started at: 1728993946899 ms
+Sum of all elements: 250006.35492434527
+Time taken: 2.654879ms
+	Command being timed: "docker run --runtime=io.containerd.wasmtime.v2 --platform=wasm --name test_container_1728993945641000466 --rm sangeetakakati/rust-matrix-wasm:wasm"
+	User time (seconds): 0.01
+	System time (seconds): 0.01
+	Percent of CPU this job got: 5%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.46
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24576
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3007
+	Voluntary context switches: 742
+	Involuntary context switches: 1
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Container Execution Time (Wall Clock): 1418 ms
 --------------------------------------------
 Execution for sangeetakakati/rust-matrix-wasm:wasm completed
-Total Execution Time: 2584 ms
+Total Execution Time: 2366 ms
 Using cached image for sangeetakakati/tinygo-matrix-native:latest
 
 ============================================
@@ -364,26 +363,26 @@ latest: Pulling from sangeetakakati/tinygo-matrix-native
 Digest: sha256:a83fe4d354a7a4b78ca36ba198da1886f13efb5f25a32e3e85014e35b9dbc552
 Status: Image is up to date for sangeetakakati/tinygo-matrix-native:latest
 docker.io/sangeetakakati/tinygo-matrix-native:latest
-Image Pull Time: 1262 ms
+Image Pull Time: 1281 ms
 Starting container...
-Main function started at: 1728834943933 ms
-Sum of all elements: 253873.940973
-Time taken: 2.60683ms
-	Command being timed: "docker run --name test_container_1728834942428790128 --rm sangeetakakati/tinygo-matrix-native:latest"
-	User time (seconds): 0.01
+Main function started at: 1728993948581 ms
+Sum of all elements: 248255.027015
+Time taken: 2.597046ms
+	Command being timed: "docker run --name test_container_1728993947077581891 --rm sangeetakakati/tinygo-matrix-native:latest"
+	User time (seconds): 0.02
 	System time (seconds): 0.01
-	Percent of CPU this job got: 8%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.36
+	Percent of CPU this job got: 9%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.35
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 23808
+	Maximum resident set size (kbytes): 25344
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 3008
-	Voluntary context switches: 792
-	Involuntary context switches: 0
+	Minor (reclaiming a frame) page faults: 3200
+	Voluntary context switches: 828
+	Involuntary context switches: 2
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 0
@@ -392,10 +391,10 @@ Time taken: 2.60683ms
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
-Container Execution Time (Wall Clock): 1628 ms
+Container Execution Time (Wall Clock): 1635 ms
 --------------------------------------------
 Execution for sangeetakakati/tinygo-matrix-native:latest completed
-Total Execution Time: 2890 ms
+Total Execution Time: 2916 ms
 Using cached image for sangeetakakati/tinygo-matrix-wasm:wasm
 
 ============================================
@@ -405,17 +404,17 @@ wasm: Pulling from sangeetakakati/tinygo-matrix-wasm
 Digest: sha256:ec2d1157769da07991163ea3e024eb0a0d9f72d576a9ca926ce00d9ba7ab8cbf
 Status: Image is up to date for sangeetakakati/tinygo-matrix-wasm:wasm
 docker.io/sangeetakakati/tinygo-matrix-wasm:wasm
-Image Pull Time: 954 ms
+Image Pull Time: 970 ms
 Starting container...
 Running Wasm container with runtime: io.containerd.wasmtime.v2
-Main function started at: 1728834945375 ms
-Sum of all elements: 245656.248642
-Time taken: 3.014335ms
-	Command being timed: "docker run --runtime=io.containerd.wasmtime.v2 --platform=wasm --name test_container_1728834944075343106 --rm sangeetakakati/tinygo-matrix-wasm:wasm"
+Main function started at: 1728993950052 ms
+Sum of all elements: 248796.641857
+Time taken: 3.015484ms
+	Command being timed: "docker run --runtime=io.containerd.wasmtime.v2 --platform=wasm --name test_container_1728993948732289380 --rm sangeetakakati/tinygo-matrix-wasm:wasm"
 	User time (seconds): 0.01
-	System time (seconds): 0.00
-	Percent of CPU this job got: 5%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.48
+	System time (seconds): 0.01
+	Percent of CPU this job got: 7%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.50
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
@@ -423,8 +422,8 @@ Time taken: 3.014335ms
 	Maximum resident set size (kbytes): 25344
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 3014
-	Voluntary context switches: 711
+	Minor (reclaiming a frame) page faults: 3148
+	Voluntary context switches: 945
 	Involuntary context switches: 0
 	Swaps: 0
 	File system inputs: 0
@@ -434,10 +433,10 @@ Time taken: 3.014335ms
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
-Container Execution Time (Wall Clock): 1441 ms
+Container Execution Time (Wall Clock): 1477 ms
 --------------------------------------------
 Execution for sangeetakakati/tinygo-matrix-wasm:wasm completed
-Total Execution Time: 2395 ms
+Total Execution Time: 2447 ms
 Using cached image for sangeetakakati/cpp-matrix-native:latest
 
 ============================================
@@ -447,25 +446,25 @@ latest: Pulling from sangeetakakati/cpp-matrix-native
 Digest: sha256:bf158c2fadc722a33f9f75075e9c29394d6cc723cea6df01c071264152368fc6
 Status: Image is up to date for sangeetakakati/cpp-matrix-native:latest
 docker.io/sangeetakakati/cpp-matrix-native:latest
-Image Pull Time: 989 ms
+Image Pull Time: 967 ms
 Starting container...
-Main function started at: 1728834946742 ms
-Sum of all elements: 246856
-Time taken: 0.0010709 seconds
-	Command being timed: "docker run --name test_container_1728834945534535523 --rm sangeetakakati/cpp-matrix-native:latest"
-	User time (seconds): 0.01
+Main function started at: 1728993951411 ms
+Sum of all elements: 247801
+Time taken: 0.00108601 seconds
+	Command being timed: "docker run --name test_container_1728993950227511513 --rm sangeetakakati/cpp-matrix-native:latest"
+	User time (seconds): 0.00
 	System time (seconds): 0.01
-	Percent of CPU this job got: 7%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.35
+	Percent of CPU this job got: 8%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.33
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 24576
+	Maximum resident set size (kbytes): 23808
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 2912
-	Voluntary context switches: 771
+	Minor (reclaiming a frame) page faults: 3027
+	Voluntary context switches: 726
 	Involuntary context switches: 3
 	Swaps: 0
 	File system inputs: 0
@@ -475,10 +474,10 @@ Time taken: 0.0010709 seconds
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
-Container Execution Time (Wall Clock): 1348 ms
+Container Execution Time (Wall Clock): 1304 ms
 --------------------------------------------
 Execution for sangeetakakati/cpp-matrix-native:latest completed
-Total Execution Time: 2337 ms
+Total Execution Time: 2271 ms
 Using cached image for sangeetakakati/cpp-matrix-wasm:wasm
 
 ============================================
@@ -488,27 +487,27 @@ wasm: Pulling from sangeetakakati/cpp-matrix-wasm
 Digest: sha256:9a65f736fee7a0a55eb9be60b1512c036a7feec6603406fa259acb4a1b4c97d1
 Status: Image is up to date for sangeetakakati/cpp-matrix-wasm:wasm
 docker.io/sangeetakakati/cpp-matrix-wasm:wasm
-Image Pull Time: 975 ms
+Image Pull Time: 952 ms
 Starting container...
 Running Wasm container with runtime: io.containerd.wasmtime.v2
-Main function started at: 1728834948178 ms
+Main function started at: 1728993952816 ms
 Sum of all elements: 61980.3
-Time taken: 0.00111904 seconds
-	Command being timed: "docker run --runtime=io.containerd.wasmtime.v2 --platform=wasm --name test_container_1728834946901542609 --rm sangeetakakati/cpp-matrix-wasm:wasm"
-	User time (seconds): 0.00
+Time taken: 0.00111656 seconds
+	Command being timed: "docker run --runtime=io.containerd.wasmtime.v2 --platform=wasm --name test_container_1728993951549041115 --rm sangeetakakati/cpp-matrix-wasm:wasm"
+	User time (seconds): 0.01
 	System time (seconds): 0.01
-	Percent of CPU this job got: 5%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.41
+	Percent of CPU this job got: 6%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.45
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 25344
+	Maximum resident set size (kbytes): 24576
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 2970
-	Voluntary context switches: 819
-	Involuntary context switches: 0
+	Minor (reclaiming a frame) page faults: 3007
+	Voluntary context switches: 780
+	Involuntary context switches: 3
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 0
@@ -517,7 +516,7 @@ Time taken: 0.00111904 seconds
 	Signals delivered: 0
 	Page size (bytes): 4096
 	Exit status: 0
-Container Execution Time (Wall Clock): 1391 ms
+Container Execution Time (Wall Clock): 1414 ms
 --------------------------------------------
 Execution for sangeetakakati/cpp-matrix-wasm:wasm completed
 Total Execution Time: 2366 ms

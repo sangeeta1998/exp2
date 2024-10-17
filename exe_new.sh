@@ -87,13 +87,13 @@ tinygo_wasm_image="sangeetakakati/tinygo-matrix-wasm:wasm"
 # Measure execution time with forced fresh pull
 echo -e "\nTesting with forced fresh pull:"
 measure_execution_time "$rust_native_image" "" "$arch" true
-measure_execution_time "$rust_wasm_image" "io.containerd.wasmtime.v2" "wasm" true
+measure_execution_time "$rust_wasm_image" "io.containerd.wasmtime.v1" "wasm" true
 
 measure_execution_time "$tinygo_native_image" "" "$arch" true
-measure_execution_time "$tinygo_wasm_image" "io.containerd.wasmtime.v2" "wasm" true
+measure_execution_time "$tinygo_wasm_image" "io.containerd.wasmtime.v1" "wasm" true
 
 measure_execution_time "$cpp_native_image" "" "$arch" true
-measure_execution_time "$cpp_wasm_image" "io.containerd.wasmtime.v2" "wasm" true
+measure_execution_time "$cpp_wasm_image" "io.containerd.wasmtime.v1" "wasm" true
 
 # Measure execution time using cached images (skip removal)
 echo -e "\nTesting with cached images:"
@@ -107,7 +107,7 @@ fi
 
 if [[ "$(docker images -q $rust_wasm_image 2> /dev/null)" != "" ]]; then
     echo "Using cached image for $rust_wasm_image"
-    measure_execution_time "$rust_wasm_image" "io.containerd.wasmtime.v2" "wasm" false
+    measure_execution_time "$rust_wasm_image" "io.containerd.wasmtime.v1" "wasm" false
 else
     echo "Image not found in cache: $rust_wasm_image"
 fi
@@ -121,7 +121,7 @@ fi
 
 if [[ "$(docker images -q $tinygo_wasm_image 2> /dev/null)" != "" ]]; then
     echo "Using cached image for $tinygo_wasm_image"
-    measure_execution_time "$tinygo_wasm_image" "io.containerd.wasmtime.v2" "wasm" false
+    measure_execution_time "$tinygo_wasm_image" "io.containerd.wasmtime.v1" "wasm" false
 else
     echo "Image not found in cache: $tinygo_wasm_image"
 fi
@@ -135,7 +135,7 @@ fi
 
 if [[ "$(docker images -q $cpp_wasm_image 2> /dev/null)" != "" ]]; then
     echo "Using cached image for $cpp_wasm_image"
-    measure_execution_time "$cpp_wasm_image" "io.containerd.wasmtime.v2" "wasm" false
+    measure_execution_time "$cpp_wasm_image" "io.containerd.wasmtime.v1" "wasm" false
 else
     echo "Image not found in cache: $cpp_wasm_image"
 fi

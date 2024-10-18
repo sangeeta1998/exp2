@@ -25,4 +25,5 @@ clean:
 	docker rmi sangeetakakati/rust-matrix-wasm:wasm
 	docker rmi sangeetakakati/tinygo-matrix-wasm:wasm
 	docker rmi sangeetakakati/cpp-matrix-wasm:wasm
+	docker system prune -a -f
 

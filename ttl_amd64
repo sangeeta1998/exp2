@@ -1,0 +1,187 @@
+
+Testing with forced fresh pull:
+
+============================================
+Running ttl.sh/rust-matrix-native:2h with  (Fresh Pull: true)
+--------------------------------------------
+Removing image ttl.sh/rust-matrix-native:2h to force fresh pull...
+Untagged: ttl.sh/rust-matrix-native:2h
+Untagged: ttl.sh/rust-matrix-native@sha256:1a3035f89e3931ee3ac427f1f5a4810f1a23eead1fe73973715985761bbf1d15
+Deleted: sha256:9befc0527c1152cb6e640403b8e911f25cd95a8cb4bbcba901baf7fcb8b69334
+Deleted: sha256:c2d910cdbf16b2cf08f06a4014585871383a24498e639a514425d6911974649c
+2h: Pulling from rust-matrix-native
+49adba65443c: Pulling fs layer
+49adba65443c: Verifying Checksum
+49adba65443c: Download complete
+49adba65443c: Pull complete
+Digest: sha256:1a3035f89e3931ee3ac427f1f5a4810f1a23eead1fe73973715985761bbf1d15
+Status: Downloaded newer image for ttl.sh/rust-matrix-native:2h
+ttl.sh/rust-matrix-native:2h
+Image Pull Time: 2639 ms
+Main function started at: 1729257015346 ms
+Sum of all elements: 252415.0627111184
+Time taken: 2.495242ms
+Container Execution Time: 366 ms
+--------------------------------------------
+Execution for ttl.sh/rust-matrix-native:2h completed
+Total Execution Time: 3005 ms
+
+============================================
+Running ttl.sh/rust-matrix-wasm:2h with io.containerd.wasmtime.v1 (Fresh Pull: true)
+--------------------------------------------
+Removing image ttl.sh/rust-matrix-wasm:2h to force fresh pull...
+2h: Pulling from rust-matrix-wasm
+Image Pull Time: 1251 ms
+Main function started at: 1729257018132 ms
+Sum of all elements: 242618.57974444827
+Time taken: 2.652768ms
+Container Execution Time: 1546 ms
+--------------------------------------------
+Execution for ttl.sh/rust-matrix-wasm:2h completed
+Total Execution Time: 2797 ms
+
+============================================
+Running ttl.sh/tinygo-matrix-native:2h with  (Fresh Pull: true)
+--------------------------------------------
+Removing image ttl.sh/tinygo-matrix-native:2h to force fresh pull...
+Untagged: ttl.sh/tinygo-matrix-native:2h
+Untagged: ttl.sh/tinygo-matrix-native@sha256:f102a124d65f53c878e1a852349634a8b2f681d4ba353f3c9f71eb4ec0881a29
+2h: Pulling from tinygo-matrix-native
+Digest: sha256:f102a124d65f53c878e1a852349634a8b2f681d4ba353f3c9f71eb4ec0881a29
+Status: Downloaded newer image for ttl.sh/tinygo-matrix-native:2h
+ttl.sh/tinygo-matrix-native:2h
+Image Pull Time: 888 ms
+Main function started at: 1729257019419 ms
+Sum of all elements: 250826.862659
+Time taken: 2.569792ms
+Container Execution Time: 335 ms
+--------------------------------------------
+Execution for ttl.sh/tinygo-matrix-native:2h completed
+Total Execution Time: 1223 ms
+
+============================================
+Running ttl.sh/tinygo-matrix-wasm:2h with io.containerd.wasmtime.v1 (Fresh Pull: true)
+--------------------------------------------
+Removing image ttl.sh/tinygo-matrix-wasm:2h to force fresh pull...
+2h: Pulling from tinygo-matrix-wasm
+Image Pull Time: 1149 ms
+Main function started at: 1729257022234 ms
+Sum of all elements: 250058.582529
+Time taken: 3.013754ms
+Container Execution Time: 1655 ms
+--------------------------------------------
+Execution for ttl.sh/tinygo-matrix-wasm:2h completed
+Total Execution Time: 2804 ms
+
+============================================
+Running ttl.sh/cpp-matrix-native:2h with  (Fresh Pull: true)
+--------------------------------------------
+Removing image ttl.sh/cpp-matrix-native:2h to force fresh pull...
+Untagged: ttl.sh/cpp-matrix-native:2h
+Untagged: ttl.sh/cpp-matrix-native@sha256:6939ea627fea7fbad53fa2c330c5a071f6f96d9e179bb68b4fffcd7964af8f6e
+2h: Pulling from cpp-matrix-native
+Digest: sha256:6939ea627fea7fbad53fa2c330c5a071f6f96d9e179bb68b4fffcd7964af8f6e
+Status: Downloaded newer image for ttl.sh/cpp-matrix-native:2h
+ttl.sh/cpp-matrix-native:2h
+Image Pull Time: 782 ms
+Main function started at: 1729257023377 ms
+Sum of all elements: 247442
+Time taken: 0.00105946 seconds
+Container Execution Time: 327 ms
+--------------------------------------------
+Execution for ttl.sh/cpp-matrix-native:2h completed
+Total Execution Time: 1109 ms
+
+============================================
+Running ttl.sh/cpp-matrix-wasm:2h with io.containerd.wasmtime.v1 (Fresh Pull: true)
+--------------------------------------------
+Removing image ttl.sh/cpp-matrix-wasm:2h to force fresh pull...
+2h: Pulling from cpp-matrix-wasm
+Image Pull Time: 1130 ms
+Main function started at: 1729257026142 ms
+Sum of all elements: 61980.3
+Time taken: 0.00111346 seconds
+Container Execution Time: 1645 ms
+--------------------------------------------
+Execution for ttl.sh/cpp-matrix-wasm:2h completed
+Total Execution Time: 2775 ms
+
+Testing with cached images:
+Using cached image for ttl.sh/rust-matrix-native:2h
+
+============================================
+Running ttl.sh/rust-matrix-native:2h with  (Fresh Pull: false)
+--------------------------------------------
+Skipping image pull for cached image: ttl.sh/rust-matrix-native:2h
+Main function started at: 1729257026515 ms
+Sum of all elements: 248194.13164645308
+Time taken: 2.543342ms
+Container Execution Time: 334 ms
+--------------------------------------------
+Execution for ttl.sh/rust-matrix-native:2h completed
+Total Execution Time: 334 ms
+Using cached image for ttl.sh/rust-matrix-wasm:2h
+
+============================================
+Running ttl.sh/rust-matrix-wasm:2h with io.containerd.wasmtime.v1 (Fresh Pull: false)
+--------------------------------------------
+Skipping image pull for cached image: ttl.sh/rust-matrix-wasm:2h
+Main function started at: 1729257026958 ms
+Sum of all elements: 250527.19480884357
+Time taken: 2.656553ms
+Container Execution Time: 429 ms
+--------------------------------------------
+Execution for ttl.sh/rust-matrix-wasm:2h completed
+Total Execution Time: 429 ms
+Using cached image for ttl.sh/tinygo-matrix-native:2h
+
+============================================
+Running ttl.sh/tinygo-matrix-native:2h with  (Fresh Pull: false)
+--------------------------------------------
+Skipping image pull for cached image: ttl.sh/tinygo-matrix-native:2h
+Main function started at: 1729257027306 ms
+Sum of all elements: 249228.515530
+Time taken: 2.548436ms
+Container Execution Time: 324 ms
+--------------------------------------------
+Execution for ttl.sh/tinygo-matrix-native:2h completed
+Total Execution Time: 324 ms
+Using cached image for ttl.sh/tinygo-matrix-wasm:2h
+
+============================================
+Running ttl.sh/tinygo-matrix-wasm:2h with io.containerd.wasmtime.v1 (Fresh Pull: false)
+--------------------------------------------
+Skipping image pull for cached image: ttl.sh/tinygo-matrix-wasm:2h
+Main function started at: 1729257027794 ms
+Sum of all elements: 249321.806063
+Time taken: 3.048572ms
+Container Execution Time: 473 ms
+--------------------------------------------
+Execution for ttl.sh/tinygo-matrix-wasm:2h completed
+Total Execution Time: 473 ms
+Using cached image for ttl.sh/cpp-matrix-native:2h
+
+============================================
+Running ttl.sh/cpp-matrix-native:2h with  (Fresh Pull: false)
+--------------------------------------------
+Skipping image pull for cached image: ttl.sh/cpp-matrix-native:2h
+Main function started at: 1729257028131 ms
+Sum of all elements: 246185
+Time taken: 0.00107977 seconds
+Container Execution Time: 306 ms
+--------------------------------------------
+Execution for ttl.sh/cpp-matrix-native:2h completed
+Total Execution Time: 306 ms
+Using cached image for ttl.sh/cpp-matrix-wasm:2h
+
+============================================
+Running ttl.sh/cpp-matrix-wasm:2h with io.containerd.wasmtime.v1 (Fresh Pull: false)
+--------------------------------------------
+Skipping image pull for cached image: ttl.sh/cpp-matrix-wasm:2h
+Main function started at: 1729257028559 ms
+Sum of all elements: 61980.3
+Time taken: 0.00112156 seconds
+Container Execution Time: 410 ms
+--------------------------------------------
+Execution for ttl.sh/cpp-matrix-wasm:2h completed
+Total Execution Time: 410 ms

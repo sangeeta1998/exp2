@@ -20,7 +20,7 @@ Measure_wasm function performs similar steps but uses a different Docker image a
 
 ```docker buildx build --platform linux/amd64,linux/arm64  --output "type=image,push=true" --tag sangeetakakati/tinygo-matrix-native:latest --builder default .```
 
-```docker run --platform=linux/arm64 --rm sangeetakakati/rust-matrix-native:latest```
+```docker run --rm sangeetakakati/rust-matrix-native:latest```
 
 Similarly, using amd64
 
@@ -28,13 +28,13 @@ Similarly, using amd64
 
 docker buildx build --platform wasm --tag sangeetakakati/rust-matrix-wasm:wasm --output "type=image,push=true" --builder default .
 
-docker run --runtime=io.containerd.wasmtime.v2   --platform=wasm   sangeetakakati/rust-matrix-wasm:wasm
+docker run --runtime=io.containerd.wasmtime.v1   --platform=wasm   sangeetakakati/rust-matrix-wasm:wasm
 
 ```tinygo-matrix-wasm```
 
 docker buildx build --platform wasm --tag sangeetakakati/tinygo-matrix-wasm:wasm --output "type=image,push=true" --builder default .
 
-docker run --runtime=io.containerd.wasmtime.v2 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:wasm
+docker run --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/tinygo-matrix-wasm:wasm
 
 ```cpp-matrix-wasm```
 
@@ -42,7 +42,7 @@ clang++ --target=wasm32-wasi -fno-exceptions -o matrix.wasm matrix.cpp
 
 docker buildx build --platform wasm --tag sangeetakakati/cpp-matrix-wasm:wasm --output "type=image,push=true" --builder default .
 
-docker run --runtime=io.containerd.wasmtime.v2 --platform=wasm --rm sangeetakakati/cpp-matrix-wasm:wasm
+docker run --runtime=io.containerd.wasmtime.v1 --platform=wasm --rm sangeetakakati/cpp-matrix-wasm:wasm
 
 #For errors, try using platform wasm instead of wasi/wasm:
 ```docker buildx build --platform wasm -t sangeetakakati/tinygo-matrix-wasm:trial --output "type=image,push=true" --builder default .```
@@ -68,7 +68,7 @@ Similarly for arm64
 
 sudo ctr images pull --platform wasi/wasm docker.io/sangeetakakati/rust-matrix-wasm:wasm
 
-sudo ctr run --rm --runtime=io.containerd.wasmtime.v2 --platform=wasi/wasm docker.io/sangeetakakati/rust-matrix-wasm:wasm mycontainer
+sudo ctr run --rm --runtime=io.containerd.wasmtime.v1 --platform=wasi/wasm docker.io/sangeetakakati/rust-matrix-wasm:wasm mycontainer
 
 ```tinygo```
 

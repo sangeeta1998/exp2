@@ -91,10 +91,10 @@ measure_main_function_start_time() {
     echo -e "============================================\n"
 
     # Log total execution time
-    echo "Image: $image" >> execution_time.log
-    echo "Average Pull Time: $avg_pull_time ms" >> pull_time.log
-    echo "Average Time Until Main Start: $avg_start_time ms" >> startup_time.log
-    echo "--------------------------------------------" >> execution_time.log
+    echo "Image: $image" 
+    echo "Average Pull Time: $avg_pull_time ms" 
+    echo "Average Time Until Main Start: $avg_start_time ms" 
+    echo "--------------------------------------------" 
 }
 
 # Detect current system architecture

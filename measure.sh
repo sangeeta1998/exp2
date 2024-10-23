@@ -109,7 +109,7 @@ rust_wasm_image="sangeetakakati/rust-matrix-wasm:wasm"
 tinygo_wasm_image="sangeetakakati/tinygo-matrix-wasm:wasm"
 
 # Set the number of iterations for each test
-iterations=10
+iterations=20
 
 # Measure execution time until main function starts with forced fresh pull
 echo -e "\nTesting with forced fresh pull:"

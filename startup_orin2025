@@ -1,0 +1,539 @@
+
+Testing with forced fresh pull:
+
+============================================
+Running sangeetakakati/rust-matrix-native:latest with  (Fresh Pull: true) for 3 iterations
+--------------------------------------------
+Iteration 1:
+Removing image sangeetakakati/rust-matrix-native:latest to force fresh pull...
+latest: Pulling from sangeetakakati/rust-matrix-native
+5e8e86db3db1: Pulling fs layer
+5e8e86db3db1: Verifying Checksum
+5e8e86db3db1: Download complete
+5e8e86db3db1: Pull complete
+Digest: sha256:82ff961ad500024fdcfd0bc80b5d32c1779780cb7fb82a967dbaffa805336bcd
+Status: Downloaded newer image for sangeetakakati/rust-matrix-native:latest
+docker.io/sangeetakakati/rust-matrix-native:latest
+Image Pull Time (Iteration 1): 3927 ms
+Main function started at: 1753364593368
+Container Execution Time Until Main Start (Iteration 1): 761 ms
+Iteration 2:
+Removing image sangeetakakati/rust-matrix-native:latest to force fresh pull...
+Untagged: sangeetakakati/rust-matrix-native:latest
+Untagged: sangeetakakati/rust-matrix-native@sha256:82ff961ad500024fdcfd0bc80b5d32c1779780cb7fb82a967dbaffa805336bcd
+Deleted: sha256:de138b2f458b888cbc979c020016e18709de11db711be63987ba0d1e049b9b2d
+Deleted: sha256:5f7f9b3aa72cd1721d54e3c675383fdc48eba0f1d05a8bc6439587d5c92fd36d
+latest: Pulling from sangeetakakati/rust-matrix-native
+5e8e86db3db1: Pulling fs layer
+5e8e86db3db1: Verifying Checksum
+5e8e86db3db1: Download complete
+5e8e86db3db1: Pull complete
+Digest: sha256:82ff961ad500024fdcfd0bc80b5d32c1779780cb7fb82a967dbaffa805336bcd
+Status: Downloaded newer image for sangeetakakati/rust-matrix-native:latest
+docker.io/sangeetakakati/rust-matrix-native:latest
+Image Pull Time (Iteration 2): 2251 ms
+Main function started at: 1753364596415
+Container Execution Time Until Main Start (Iteration 2): 756 ms
+Iteration 3:
+Removing image sangeetakakati/rust-matrix-native:latest to force fresh pull...
+Untagged: sangeetakakati/rust-matrix-native:latest
+Untagged: sangeetakakati/rust-matrix-native@sha256:82ff961ad500024fdcfd0bc80b5d32c1779780cb7fb82a967dbaffa805336bcd
+Deleted: sha256:de138b2f458b888cbc979c020016e18709de11db711be63987ba0d1e049b9b2d
+Deleted: sha256:5f7f9b3aa72cd1721d54e3c675383fdc48eba0f1d05a8bc6439587d5c92fd36d
+latest: Pulling from sangeetakakati/rust-matrix-native
+5e8e86db3db1: Pulling fs layer
+5e8e86db3db1: Verifying Checksum
+5e8e86db3db1: Download complete
+5e8e86db3db1: Pull complete
+Digest: sha256:82ff961ad500024fdcfd0bc80b5d32c1779780cb7fb82a967dbaffa805336bcd
+Status: Downloaded newer image for sangeetakakati/rust-matrix-native:latest
+docker.io/sangeetakakati/rust-matrix-native:latest
+Image Pull Time (Iteration 3): 2235 ms
+Main function started at: 1753364599513
+Container Execution Time Until Main Start (Iteration 3): 795 ms
+
+============================================
+Summary for sangeetakakati/rust-matrix-native:latest:
+Average Image Pull Time: 2804 ms
+Average Time Until Main Function Start: 770 ms
+============================================
+
+Image: sangeetakakati/rust-matrix-native:latest
+Average Pull Time: 2804 ms
+Average Time Until Main Start: 770 ms
+--------------------------------------------
+
+============================================
+Running sangeetakakati/rust-matrix-wasm:wasm with io.containerd.wasmtime.v1 (Fresh Pull: true) for 3 iterations
+--------------------------------------------
+Iteration 1:
+Removing image sangeetakakati/rust-matrix-wasm:wasm to force fresh pull...
+wasm: Pulling from sangeetakakati/rust-matrix-wasm
+88a498aee6fb: Pulling fs layer
+88a498aee6fb: Verifying Checksum
+88a498aee6fb: Download complete
+88a498aee6fb: Pull complete
+Digest: sha256:795f9a4d2be825b8c96c6c4863ea345b04685df4dbaf68893c42a382f9ccda05
+Status: Downloaded newer image for sangeetakakati/rust-matrix-wasm:wasm
+docker.io/sangeetakakati/rust-matrix-wasm:wasm
+Image Pull Time (Iteration 1): 3094 ms
+Main function started at: 1753364604516
+Container Execution Time Until Main Start (Iteration 1): 1923 ms
+Iteration 2:
+Removing image sangeetakakati/rust-matrix-wasm:wasm to force fresh pull...
+Untagged: sangeetakakati/rust-matrix-wasm:wasm
+Untagged: sangeetakakati/rust-matrix-wasm@sha256:795f9a4d2be825b8c96c6c4863ea345b04685df4dbaf68893c42a382f9ccda05
+Deleted: sha256:226693be7378963ae898d0b218789540710b2f29b5cec8f662a95abf01711b01
+Deleted: sha256:5411f0385bfdfe8fe8e74b24e38e67e16a456d5aaabf6a440483c0a34f39ffaa
+wasm: Pulling from sangeetakakati/rust-matrix-wasm
+88a498aee6fb: Pulling fs layer
+88a498aee6fb: Verifying Checksum
+88a498aee6fb: Download complete
+88a498aee6fb: Pull complete
+Digest: sha256:795f9a4d2be825b8c96c6c4863ea345b04685df4dbaf68893c42a382f9ccda05
+Status: Downloaded newer image for sangeetakakati/rust-matrix-wasm:wasm
+docker.io/sangeetakakati/rust-matrix-wasm:wasm
+Image Pull Time (Iteration 2): 2169 ms
+Main function started at: 1753364608775
+Container Execution Time Until Main Start (Iteration 2): 1856 ms
+Iteration 3:
+Removing image sangeetakakati/rust-matrix-wasm:wasm to force fresh pull...
+Untagged: sangeetakakati/rust-matrix-wasm:wasm
+Untagged: sangeetakakati/rust-matrix-wasm@sha256:795f9a4d2be825b8c96c6c4863ea345b04685df4dbaf68893c42a382f9ccda05
+Deleted: sha256:226693be7378963ae898d0b218789540710b2f29b5cec8f662a95abf01711b01
+Deleted: sha256:5411f0385bfdfe8fe8e74b24e38e67e16a456d5aaabf6a440483c0a34f39ffaa
+wasm: Pulling from sangeetakakati/rust-matrix-wasm
+88a498aee6fb: Pulling fs layer
+88a498aee6fb: Verifying Checksum
+88a498aee6fb: Download complete
+88a498aee6fb: Pull complete
+Digest: sha256:795f9a4d2be825b8c96c6c4863ea345b04685df4dbaf68893c42a382f9ccda05
+Status: Downloaded newer image for sangeetakakati/rust-matrix-wasm:wasm
+docker.io/sangeetakakati/rust-matrix-wasm:wasm
+Image Pull Time (Iteration 3): 2112 ms
+Main function started at: 1753364612849
+Container Execution Time Until Main Start (Iteration 3): 1873 ms
+
+============================================
+Summary for sangeetakakati/rust-matrix-wasm:wasm:
+Average Image Pull Time: 2458 ms
+Average Time Until Main Function Start: 1884 ms
+============================================
+
+Image: sangeetakakati/rust-matrix-wasm:wasm
+Average Pull Time: 2458 ms
+Average Time Until Main Start: 1884 ms
+--------------------------------------------
+
+============================================
+Running sangeetakakati/tinygo-matrix-native:latest with  (Fresh Pull: true) for 3 iterations
+--------------------------------------------
+Iteration 1:
+Removing image sangeetakakati/tinygo-matrix-native:latest to force fresh pull...
+latest: Pulling from sangeetakakati/tinygo-matrix-native
+72434991ec50: Pulling fs layer
+72434991ec50: Verifying Checksum
+72434991ec50: Download complete
+72434991ec50: Pull complete
+Digest: sha256:985d7217a137a1839c0ec5e1c936183a3c161428dd6175e7f04cc801343b0254
+Status: Downloaded newer image for sangeetakakati/tinygo-matrix-native:latest
+docker.io/sangeetakakati/tinygo-matrix-native:latest
+Image Pull Time (Iteration 1): 4027 ms
+Main function started at: 1753364617793
+Container Execution Time Until Main Start (Iteration 1): 939 ms
+Iteration 2:
+Removing image sangeetakakati/tinygo-matrix-native:latest to force fresh pull...
+Untagged: sangeetakakati/tinygo-matrix-native:latest
+Untagged: sangeetakakati/tinygo-matrix-native@sha256:985d7217a137a1839c0ec5e1c936183a3c161428dd6175e7f04cc801343b0254
+Deleted: sha256:aae2016b966ff3635821b893a1ef03184a8be3aa37546349e0e0eaf0c9c85170
+Deleted: sha256:816418991f3a9807d88ef51085836f73da21a8be8d53ef3418436cf28b33008e
+latest: Pulling from sangeetakakati/tinygo-matrix-native
+72434991ec50: Pulling fs layer
+72434991ec50: Download complete
+72434991ec50: Pull complete
+Digest: sha256:985d7217a137a1839c0ec5e1c936183a3c161428dd6175e7f04cc801343b0254
+Status: Downloaded newer image for sangeetakakati/tinygo-matrix-native:latest
+docker.io/sangeetakakati/tinygo-matrix-native:latest
+Image Pull Time (Iteration 2): 3262 ms
+Main function started at: 1753364622018
+Container Execution Time Until Main Start (Iteration 2): 827 ms
+Iteration 3:
+Removing image sangeetakakati/tinygo-matrix-native:latest to force fresh pull...
+Untagged: sangeetakakati/tinygo-matrix-native:latest
+Untagged: sangeetakakati/tinygo-matrix-native@sha256:985d7217a137a1839c0ec5e1c936183a3c161428dd6175e7f04cc801343b0254
+Deleted: sha256:aae2016b966ff3635821b893a1ef03184a8be3aa37546349e0e0eaf0c9c85170
+Deleted: sha256:816418991f3a9807d88ef51085836f73da21a8be8d53ef3418436cf28b33008e
+latest: Pulling from sangeetakakati/tinygo-matrix-native
+72434991ec50: Pulling fs layer
+72434991ec50: Download complete
+72434991ec50: Pull complete
+Digest: sha256:985d7217a137a1839c0ec5e1c936183a3c161428dd6175e7f04cc801343b0254
+Status: Downloaded newer image for sangeetakakati/tinygo-matrix-native:latest
+docker.io/sangeetakakati/tinygo-matrix-native:latest
+Image Pull Time (Iteration 3): 2136 ms
+Main function started at: 1753364625007
+Container Execution Time Until Main Start (Iteration 3): 788 ms
+
+============================================
+Summary for sangeetakakati/tinygo-matrix-native:latest:
+Average Image Pull Time: 3141 ms
+Average Time Until Main Function Start: 851 ms
+============================================
+
+Image: sangeetakakati/tinygo-matrix-native:latest
+Average Pull Time: 3141 ms
+Average Time Until Main Start: 851 ms
+--------------------------------------------
+
+============================================
+Running sangeetakakati/tinygo-matrix-wasm:wasm with io.containerd.wasmtime.v1 (Fresh Pull: true) for 3 iterations
+--------------------------------------------
+Iteration 1:
+Removing image sangeetakakati/tinygo-matrix-wasm:wasm to force fresh pull...
+wasm: Pulling from sangeetakakati/tinygo-matrix-wasm
+335ab9c63246: Pulling fs layer
+335ab9c63246: Verifying Checksum
+335ab9c63246: Download complete
+335ab9c63246: Pull complete
+Digest: sha256:ec2d1157769da07991163ea3e024eb0a0d9f72d576a9ca926ce00d9ba7ab8cbf
+Status: Downloaded newer image for sangeetakakati/tinygo-matrix-wasm:wasm
+docker.io/sangeetakakati/tinygo-matrix-wasm:wasm
+Image Pull Time (Iteration 1): 3624 ms
+Main function started at: 1753364632590
+Container Execution Time Until Main Start (Iteration 1): 3931 ms
+Iteration 2:
+Removing image sangeetakakati/tinygo-matrix-wasm:wasm to force fresh pull...
+Untagged: sangeetakakati/tinygo-matrix-wasm:wasm
+Untagged: sangeetakakati/tinygo-matrix-wasm@sha256:ec2d1157769da07991163ea3e024eb0a0d9f72d576a9ca926ce00d9ba7ab8cbf
+Deleted: sha256:f3fb637fde43640722573e011a6816f5564fbbed43788b2962f80b4eab0acf88
+Deleted: sha256:c42ad4761bbcb72228e29e52a92aa65269f8cdc084400344bc3b8e01ced39d99
+wasm: Pulling from sangeetakakati/tinygo-matrix-wasm
+335ab9c63246: Pulling fs layer
+335ab9c63246: Verifying Checksum
+335ab9c63246: Download complete
+335ab9c63246: Pull complete
+Digest: sha256:ec2d1157769da07991163ea3e024eb0a0d9f72d576a9ca926ce00d9ba7ab8cbf
+Status: Downloaded newer image for sangeetakakati/tinygo-matrix-wasm:wasm
+docker.io/sangeetakakati/tinygo-matrix-wasm:wasm
+Image Pull Time (Iteration 2): 2247 ms
+Main function started at: 1753364638687
+Container Execution Time Until Main Start (Iteration 2): 3825 ms
+Iteration 3:
+Removing image sangeetakakati/tinygo-matrix-wasm:wasm to force fresh pull...
+Untagged: sangeetakakati/tinygo-matrix-wasm:wasm
+Untagged: sangeetakakati/tinygo-matrix-wasm@sha256:ec2d1157769da07991163ea3e024eb0a0d9f72d576a9ca926ce00d9ba7ab8cbf
+Deleted: sha256:f3fb637fde43640722573e011a6816f5564fbbed43788b2962f80b4eab0acf88
+Deleted: sha256:c42ad4761bbcb72228e29e52a92aa65269f8cdc084400344bc3b8e01ced39d99
+wasm: Pulling from sangeetakakati/tinygo-matrix-wasm
+335ab9c63246: Pulling fs layer
+335ab9c63246: Download complete
+335ab9c63246: Pull complete
+Digest: sha256:ec2d1157769da07991163ea3e024eb0a0d9f72d576a9ca926ce00d9ba7ab8cbf
+Status: Downloaded newer image for sangeetakakati/tinygo-matrix-wasm:wasm
+docker.io/sangeetakakati/tinygo-matrix-wasm:wasm
+Image Pull Time (Iteration 3): 2085 ms
+Main function started at: 1753364644887
+Container Execution Time Until Main Start (Iteration 3): 4020 ms
+
+============================================
+Summary for sangeetakakati/tinygo-matrix-wasm:wasm:
+Average Image Pull Time: 2652 ms
+Average Time Until Main Function Start: 3925 ms
+============================================
+
+Image: sangeetakakati/tinygo-matrix-wasm:wasm
+Average Pull Time: 2652 ms
+Average Time Until Main Start: 3925 ms
+--------------------------------------------
+
+============================================
+Running sangeetakakati/cpp-matrix-native:latest with  (Fresh Pull: true) for 3 iterations
+--------------------------------------------
+Iteration 1:
+Removing image sangeetakakati/cpp-matrix-native:latest to force fresh pull...
+latest: Pulling from sangeetakakati/cpp-matrix-native
+e5f2d980e256: Pulling fs layer
+e5f2d980e256: Verifying Checksum
+e5f2d980e256: Download complete
+e5f2d980e256: Pull complete
+Digest: sha256:af999fb337542e10ffa49a5c02152bf704a20dc0ff164b2b30da95a72a9806ba
+Status: Downloaded newer image for sangeetakakati/cpp-matrix-native:latest
+docker.io/sangeetakakati/cpp-matrix-native:latest
+Image Pull Time (Iteration 1): 3752 ms
+Main function started at: 1753364649478
+Container Execution Time Until Main Start (Iteration 1): 762 ms
+Iteration 2:
+Removing image sangeetakakati/cpp-matrix-native:latest to force fresh pull...
+Untagged: sangeetakakati/cpp-matrix-native:latest
+Untagged: sangeetakakati/cpp-matrix-native@sha256:af999fb337542e10ffa49a5c02152bf704a20dc0ff164b2b30da95a72a9806ba
+Deleted: sha256:ff7c204407ec2b274505962097c7b5fce701dab4e83b82ecb12a481afdf9cc5f
+Deleted: sha256:7ba35e46c602e353b2cf6c9861c16a7c8bda3809f46146621dd5231a4fc0ebbe
+latest: Pulling from sangeetakakati/cpp-matrix-native
+e5f2d980e256: Pulling fs layer
+e5f2d980e256: Verifying Checksum
+e5f2d980e256: Download complete
+e5f2d980e256: Pull complete
+Digest: sha256:af999fb337542e10ffa49a5c02152bf704a20dc0ff164b2b30da95a72a9806ba
+Status: Downloaded newer image for sangeetakakati/cpp-matrix-native:latest
+docker.io/sangeetakakati/cpp-matrix-native:latest
+Image Pull Time (Iteration 2): 2194 ms
+Main function started at: 1753364652559
+Container Execution Time Until Main Start (Iteration 2): 851 ms
+Iteration 3:
+Removing image sangeetakakati/cpp-matrix-native:latest to force fresh pull...
+Untagged: sangeetakakati/cpp-matrix-native:latest
+Untagged: sangeetakakati/cpp-matrix-native@sha256:af999fb337542e10ffa49a5c02152bf704a20dc0ff164b2b30da95a72a9806ba
+Deleted: sha256:ff7c204407ec2b274505962097c7b5fce701dab4e83b82ecb12a481afdf9cc5f
+Deleted: sha256:7ba35e46c602e353b2cf6c9861c16a7c8bda3809f46146621dd5231a4fc0ebbe
+latest: Pulling from sangeetakakati/cpp-matrix-native
+e5f2d980e256: Pulling fs layer
+e5f2d980e256: Verifying Checksum
+e5f2d980e256: Download complete
+e5f2d980e256: Pull complete
+Digest: sha256:af999fb337542e10ffa49a5c02152bf704a20dc0ff164b2b30da95a72a9806ba
+Status: Downloaded newer image for sangeetakakati/cpp-matrix-native:latest
+docker.io/sangeetakakati/cpp-matrix-native:latest
+Image Pull Time (Iteration 3): 2256 ms
+Main function started at: 1753364655684
+Container Execution Time Until Main Start (Iteration 3): 813 ms
+
+============================================
+Summary for sangeetakakati/cpp-matrix-native:latest:
+Average Image Pull Time: 2734 ms
+Average Time Until Main Function Start: 808 ms
+============================================
+
+Image: sangeetakakati/cpp-matrix-native:latest
+Average Pull Time: 2734 ms
+Average Time Until Main Start: 808 ms
+--------------------------------------------
+
+============================================
+Running sangeetakakati/cpp-matrix-wasm:wasm with io.containerd.wasmtime.v1 (Fresh Pull: true) for 3 iterations
+--------------------------------------------
+Iteration 1:
+Removing image sangeetakakati/cpp-matrix-wasm:wasm to force fresh pull...
+wasm: Pulling from sangeetakakati/cpp-matrix-wasm
+06b7cbb11283: Pulling fs layer
+06b7cbb11283: Download complete
+06b7cbb11283: Pull complete
+Digest: sha256:9a65f736fee7a0a55eb9be60b1512c036a7feec6603406fa259acb4a1b4c97d1
+Status: Downloaded newer image for sangeetakakati/cpp-matrix-wasm:wasm
+docker.io/sangeetakakati/cpp-matrix-wasm:wasm
+Image Pull Time (Iteration 1): 2951 ms
+Main function started at: 1753364661034
+Container Execution Time Until Main Start (Iteration 1): 2314 ms
+Iteration 2:
+Removing image sangeetakakati/cpp-matrix-wasm:wasm to force fresh pull...
+Untagged: sangeetakakati/cpp-matrix-wasm:wasm
+Untagged: sangeetakakati/cpp-matrix-wasm@sha256:9a65f736fee7a0a55eb9be60b1512c036a7feec6603406fa259acb4a1b4c97d1
+Deleted: sha256:e7d129e5ee45fa770bda2615512d3ce0502b99a1b9d9f3e99468a5af4a5d247f
+Deleted: sha256:7f6f2caad0b24cb94db880cfe42ec8a4d675312e6073452554d380cf805997c1
+wasm: Pulling from sangeetakakati/cpp-matrix-wasm
+06b7cbb11283: Pulling fs layer
+06b7cbb11283: Verifying Checksum
+06b7cbb11283: Download complete
+06b7cbb11283: Pull complete
+Digest: sha256:9a65f736fee7a0a55eb9be60b1512c036a7feec6603406fa259acb4a1b4c97d1
+Status: Downloaded newer image for sangeetakakati/cpp-matrix-wasm:wasm
+docker.io/sangeetakakati/cpp-matrix-wasm:wasm
+Image Pull Time (Iteration 2): 3031 ms
+Main function started at: 1753364666362
+Container Execution Time Until Main Start (Iteration 2): 2328 ms
+Iteration 3:
+Removing image sangeetakakati/cpp-matrix-wasm:wasm to force fresh pull...
+Untagged: sangeetakakati/cpp-matrix-wasm:wasm
+Untagged: sangeetakakati/cpp-matrix-wasm@sha256:9a65f736fee7a0a55eb9be60b1512c036a7feec6603406fa259acb4a1b4c97d1
+Deleted: sha256:e7d129e5ee45fa770bda2615512d3ce0502b99a1b9d9f3e99468a5af4a5d247f
+Deleted: sha256:7f6f2caad0b24cb94db880cfe42ec8a4d675312e6073452554d380cf805997c1
+wasm: Pulling from sangeetakakati/cpp-matrix-wasm
+06b7cbb11283: Pulling fs layer
+06b7cbb11283: Download complete
+06b7cbb11283: Pull complete
+Digest: sha256:9a65f736fee7a0a55eb9be60b1512c036a7feec6603406fa259acb4a1b4c97d1
+Status: Downloaded newer image for sangeetakakati/cpp-matrix-wasm:wasm
+docker.io/sangeetakakati/cpp-matrix-wasm:wasm
+Image Pull Time (Iteration 3): 2125 ms
+Main function started at: 1753364670974
+Container Execution Time Until Main Start (Iteration 3): 2312 ms
+
+============================================
+Summary for sangeetakakati/cpp-matrix-wasm:wasm:
+Average Image Pull Time: 2702 ms
+Average Time Until Main Function Start: 2318 ms
+============================================
+
+Image: sangeetakakati/cpp-matrix-wasm:wasm
+Average Pull Time: 2702 ms
+Average Time Until Main Start: 2318 ms
+--------------------------------------------
+
+Testing with cached images:
+Using cached image for sangeetakakati/rust-matrix-native:latest
+
+============================================
+Running sangeetakakati/rust-matrix-native:latest with  (Fresh Pull: false) for 3 iterations
+--------------------------------------------
+Iteration 1:
+Skipping image pull for cached image: sangeetakakati/rust-matrix-native:latest
+Main function started at: 1753364671760
+Container Execution Time Until Main Start (Iteration 1): 830 ms
+Iteration 2:
+Skipping image pull for cached image: sangeetakakati/rust-matrix-native:latest
+Main function started at: 1753364672602
+Container Execution Time Until Main Start (Iteration 2): 765 ms
+Iteration 3:
+Skipping image pull for cached image: sangeetakakati/rust-matrix-native:latest
+Main function started at: 1753364673327
+Container Execution Time Until Main Start (Iteration 3): 752 ms
+
+============================================
+Summary for sangeetakakati/rust-matrix-native:latest:
+Average Image Pull Time: 0 ms
+Average Time Until Main Function Start: 782 ms
+============================================
+
+Image: sangeetakakati/rust-matrix-native:latest
+Average Pull Time: 0 ms
+Average Time Until Main Start: 782 ms
+--------------------------------------------
+Using cached image for sangeetakakati/rust-matrix-wasm:wasm
+
+============================================
+Running sangeetakakati/rust-matrix-wasm:wasm with io.containerd.wasmtime.v1 (Fresh Pull: false) for 3 iterations
+--------------------------------------------
+Iteration 1:
+Skipping image pull for cached image: sangeetakakati/rust-matrix-wasm:wasm
+Main function started at: 1753364675166
+Container Execution Time Until Main Start (Iteration 1): 1820 ms
+Iteration 2:
+Skipping image pull for cached image: sangeetakakati/rust-matrix-wasm:wasm
+Main function started at: 1753364677041
+Container Execution Time Until Main Start (Iteration 2): 1886 ms
+Iteration 3:
+Skipping image pull for cached image: sangeetakakati/rust-matrix-wasm:wasm
+Main function started at: 1753364678963
+Container Execution Time Until Main Start (Iteration 3): 1903 ms
+
+============================================
+Summary for sangeetakakati/rust-matrix-wasm:wasm:
+Average Image Pull Time: 0 ms
+Average Time Until Main Function Start: 1869 ms
+============================================
+
+Image: sangeetakakati/rust-matrix-wasm:wasm
+Average Pull Time: 0 ms
+Average Time Until Main Start: 1869 ms
+--------------------------------------------
+Using cached image for sangeetakakati/tinygo-matrix-native:latest
+
+============================================
+Running sangeetakakati/tinygo-matrix-native:latest with  (Fresh Pull: false) for 3 iterations
+--------------------------------------------
+Iteration 1:
+Skipping image pull for cached image: sangeetakakati/tinygo-matrix-native:latest
+Main function started at: 1753364679774
+Container Execution Time Until Main Start (Iteration 1): 781 ms
+Iteration 2:
+Skipping image pull for cached image: sangeetakakati/tinygo-matrix-native:latest
+Main function started at: 1753364680564
+Container Execution Time Until Main Start (Iteration 2): 760 ms
+Iteration 3:
+Skipping image pull for cached image: sangeetakakati/tinygo-matrix-native:latest
+Main function started at: 1753364681350
+Container Execution Time Until Main Start (Iteration 3): 784 ms
+
+============================================
+Summary for sangeetakakati/tinygo-matrix-native:latest:
+Average Image Pull Time: 0 ms
+Average Time Until Main Function Start: 775 ms
+============================================
+
+Image: sangeetakakati/tinygo-matrix-native:latest
+Average Pull Time: 0 ms
+Average Time Until Main Start: 775 ms
+--------------------------------------------
+Using cached image for sangeetakakati/tinygo-matrix-wasm:wasm
+
+============================================
+Running sangeetakakati/tinygo-matrix-wasm:wasm with io.containerd.wasmtime.v1 (Fresh Pull: false) for 3 iterations
+--------------------------------------------
+Iteration 1:
+Skipping image pull for cached image: sangeetakakati/tinygo-matrix-wasm:wasm
+Main function started at: 1753364685359
+Container Execution Time Until Main Start (Iteration 1): 4057 ms
+Iteration 2:
+Skipping image pull for cached image: sangeetakakati/tinygo-matrix-wasm:wasm
+Main function started at: 1753364689224
+Container Execution Time Until Main Start (Iteration 2): 3757 ms
+Iteration 3:
+Skipping image pull for cached image: sangeetakakati/tinygo-matrix-wasm:wasm
+Main function started at: 1753364693154
+Container Execution Time Until Main Start (Iteration 3): 3980 ms
+
+============================================
+Summary for sangeetakakati/tinygo-matrix-wasm:wasm:
+Average Image Pull Time: 0 ms
+Average Time Until Main Function Start: 3931 ms
+============================================
+
+Image: sangeetakakati/tinygo-matrix-wasm:wasm
+Average Pull Time: 0 ms
+Average Time Until Main Start: 3931 ms
+--------------------------------------------
+Using cached image for sangeetakakati/cpp-matrix-native:latest
+
+============================================
+Running sangeetakakati/cpp-matrix-native:latest with  (Fresh Pull: false) for 3 iterations
+--------------------------------------------
+Iteration 1:
+Skipping image pull for cached image: sangeetakakati/cpp-matrix-native:latest
+Main function started at: 1753364694034
+Container Execution Time Until Main Start (Iteration 1): 812 ms
+Iteration 2:
+Skipping image pull for cached image: sangeetakakati/cpp-matrix-native:latest
+Main function started at: 1753364694837
+Container Execution Time Until Main Start (Iteration 2): 767 ms
+Iteration 3:
+Skipping image pull for cached image: sangeetakakati/cpp-matrix-native:latest
+Main function started at: 1753364695610
+Container Execution Time Until Main Start (Iteration 3): 742 ms
+
+============================================
+Summary for sangeetakakati/cpp-matrix-native:latest:
+Average Image Pull Time: 0 ms
+Average Time Until Main Function Start: 773 ms
+============================================
+
+Image: sangeetakakati/cpp-matrix-native:latest
+Average Pull Time: 0 ms
+Average Time Until Main Start: 773 ms
+--------------------------------------------
+Using cached image for sangeetakakati/cpp-matrix-wasm:wasm
+
+============================================
+Running sangeetakakati/cpp-matrix-wasm:wasm with io.containerd.wasmtime.v1 (Fresh Pull: false) for 3 iterations
+--------------------------------------------
+Iteration 1:
+Skipping image pull for cached image: sangeetakakati/cpp-matrix-wasm:wasm
+Main function started at: 1753364697826
+Container Execution Time Until Main Start (Iteration 1): 2221 ms
+Iteration 2:
+Skipping image pull for cached image: sangeetakakati/cpp-matrix-wasm:wasm
+Main function started at: 1753364700294
+Container Execution Time Until Main Start (Iteration 2): 2466 ms
+Iteration 3:
+Skipping image pull for cached image: sangeetakakati/cpp-matrix-wasm:wasm
+Main function started at: 1753364702675
+Container Execution Time Until Main Start (Iteration 3): 2418 ms
+
+============================================
+Summary for sangeetakakati/cpp-matrix-wasm:wasm:
+Average Image Pull Time: 0 ms
+Average Time Until Main Function Start: 2368 ms
+============================================
+
+Image: sangeetakakati/cpp-matrix-wasm:wasm
+Average Pull Time: 0 ms
+Average Time Until Main Start: 2368 ms
+--------------------------------------------
